@@ -18,10 +18,18 @@ export class LoginComponent {
 
   login() {
     //this.ejecutarTarea();
-    console.log("enviando");
     this.logingService.login(this.usuario, this.password).subscribe({
       next: (res) => {
-        this.router.navigate(['panel']);
+        if (res.success && res.message == "admin") {
+          this.router.navigate(['panel']);
+        }
+        else if (res.success && res.message == "medico") {
+          //localStorage.setItem('user', res.message);
+          this.router.navigate(['App']);
+        }
+        else {
+          console.error('Error de login');
+        }
       }
     });
 

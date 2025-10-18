@@ -1,1 +1,109 @@
-<p>app-movil works!</p>
+﻿<div class="container my-4">
+  <div class="card rounded shadow">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">Evaluación Integral del Paciente</h4>
+    </div>
+    <div class="card-body">
+
+      <!-- Wizard Step -->
+      <div [ngSwitch]="step">
+
+        <!-- Página 1: Datos Generales -->
+        <div *ngSwitchCase="1">
+          <h5>Datos Generales</h5>
+          <div class="mb-3">
+            <label>Traumatismo por accidentes:</label>
+            <input type="text" class="form-control" formControlName="traumatismo">
+          </div>
+          <div class="mb-3">
+            <label>Incompatibilidad RH (ictericia):</label>
+            <input type="text" class="form-control" formControlName="incompatibilidadRh">
+          </div>
+          <div class="mb-3">
+            <label>Padecimientos respiratorios:</label>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" formControlName="rinitis">
+              <label class="form-check-label">Rinitis alérgica</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" formControlName="sinusitis">
+              <label class="form-check-label">Sinusitis</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" formControlName="asma">
+              <label class="form-check-label">Asma</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Página 2: Desarrollo psicomotor -->
+        <div *ngSwitchCase="2">
+          <h5>Desarrollo Psicomotor y Lenguaje</h5>
+          <div class="mb-3">
+            <label>Control/Enderezamiento cefálico:</label>
+            <input type="text" class="form-control" formControlName="controlCefalico">
+          </div>
+          <div class="mb-3">
+            <label>Gateo:</label>
+            <input type="text" class="form-control" formControlName="gateo">
+          </div>
+          <div class="mb-3">
+            <label>Marcha libre:</label>
+            <input type="text" class="form-control" formControlName="marchaLibre">
+          </div>
+          <div class="mb-3">
+            <label>Frases sencillas:</label>
+            <input type="text" class="form-control" formControlName="frasesSencillas">
+          </div>
+        </div>
+
+        <!-- Página 3: Desarrollo socioafectivo y antecedentes -->
+        <div *ngSwitchCase="3">
+          <h5>Desarrollo Socioafectivo</h5>
+          <div class="mb-3">
+            <label>Temores:</label>
+            <input type="text" class="form-control" formControlName="temores">
+          </div>
+          <div class="mb-3">
+            <label>Agresividad:</label>
+            <input type="text" class="form-control" formControlName="agresividad">
+          </div>
+
+          <h5 class="mt-4">Antecedentes Hereditarios y Familiares</h5>
+          <div class="mb-3">
+            <label>Parientes con alteraciones:</label>
+            <input type="text" class="form-control" formControlName="antecedentesHereditarios">
+          </div>
+        </div>
+
+        <!-- Página 4: Alimentación y Firma -->
+        <div *ngSwitchCase="4">
+          <h5>Alimentación</h5>
+          <div class="mb-3">
+            <label>Lactancia:</label>
+            <select class="form-select" formControlName="lactancia">
+              <option value="materna">Materna</option>
+              <option value="artificial">Artificial</option>
+              <option value="mixta">Mixta</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label>Firma Fonoaudióloga:</label>
+            <input type="text" class="form-control" formControlName="firma">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Botones de navegación -->
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn btn-secondary" (click)="prev()" [disabled]="step===1">Anterior</button>
+        <button *ngIf="step<4" class="btn btn-primary" (click)="next()">Siguiente</button>
+        <button *ngIf="step===4" class="btn btn-success" (click)="submit()">Enviar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
