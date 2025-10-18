@@ -1,0 +1,12 @@
+.hover-bg-light:hover {
+  background-color: rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+/* Responsive tarjetas e inputs */
+@media (max-width: 768px) {
+  .form-control, .form-select, .btn-outline-secondary {
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+  }
+}

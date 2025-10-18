@@ -1,0 +1,57 @@
+.card {
+  height: 370px;
+  width: 400px;
+  background-color: rgba(0,0,0,0.5) !important;
+}
+
+/* Fondo general con imagen */
+.login-container {
+  height: 100vh;
+  background: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg') no-repeat center;
+}
+
+/* Caja del login */
+.login-card {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Logo */
+.login-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Inputs */
+.form-control {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+/* Botón */
+.btn-light {
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+  .btn-light:hover {
+    background-color: #00bcd4;
+    color: white;
+    box-shadow: 0 0 15px #00bcd4;
+  }
