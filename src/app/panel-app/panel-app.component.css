@@ -1,0 +1,64 @@
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+
+  .card i {
+    font-size: 40px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+  }
+
+  .card span {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+/* Opcional: estilos distintos para cada card */
+.nuevo {
+  color: #2196F3;
+}
+
+.seguimiento {
+  color: #FF9800;
+}
+
+.reporte {
+  color: #9C27B0;
+}
+
+.salir {
+  color: #F44336;
+}

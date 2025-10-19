@@ -10,6 +10,7 @@ import { PanelComponent } from './panel/panel.component';
 import { AppMovilComponent } from './app-movil/app-movil.component';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PanelAppComponent } from './panel-app/panel-app.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     PanelComponent,
     AppMovilComponent,
-    ConsultasComponent
+    ConsultasComponent,
+    PanelAppComponent
   ],
   imports: [
     BrowserModule,
