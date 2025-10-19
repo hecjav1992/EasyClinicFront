@@ -11,6 +11,7 @@ import { AppMovilComponent } from './app-movil/app-movil.component';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,

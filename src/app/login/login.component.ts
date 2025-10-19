@@ -14,7 +14,7 @@ export class LoginComponent {
   usuario: string = '';
   password: string = '';
   constructor(private logingService: LoginService,
-    private router: Router,) { }
+    private router: Router) { }
 
   login() {
     //this.ejecutarTarea();
@@ -23,7 +23,7 @@ export class LoginComponent {
         if (res.success && res.message == "admin") {
           this.router.navigate(['panel']);
         }
-        else if (res.success && res.message == "medico") {
+        else if (res.success && res.message == "fonoaudiologia") {
           //localStorage.setItem('user', res.message);
           this.router.navigate(['App']);
         }
