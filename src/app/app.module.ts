@@ -11,7 +11,8 @@ import { AppMovilComponent } from './app-movil/app-movil.component';
 import { ConsultasComponent } from './consultas/consultas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PanelAppComponent } from './panel-app/panel-app.component';
-
+import { GoogleMap, MapMarker } from '@angular/google-maps';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { PanelAppComponent } from './panel-app/panel-app.component';
     routing,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GoogleMapsModule,
+    GoogleMap
   ],
   providers: [],
   bootstrap: [AppComponent]
