@@ -136,12 +136,10 @@
         <div class="card-header bg-primary text-white">
           Ubicación de Consultas
         </div>
-        <div class="card-body" style="height:400px;">
+        <div class="card-body">
           <!-- Aquí puedes insertar un mapa interactivo (Google Maps / Leaflet) -->
-          <div class="d-flex justify-content-center align-items-center h-100 text-secondary">
-            <google-map >
-             
-            </google-map>
+          <div class="map-wrapper">
+            <google-map [center]="center" [zoom]="zoom"></google-map>
           </div>
         </div>
       </div>

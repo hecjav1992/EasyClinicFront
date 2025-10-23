@@ -10,3 +10,17 @@
     margin-bottom: 0.5rem;
   }
 }
+
+.map-wrapper {
+  width: 100%;
+  height: 500px; /* Puedes aumentar a 500px si deseas más área */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+google-map {
+  width: 100%;
+  height: 100%;
+}
+
+

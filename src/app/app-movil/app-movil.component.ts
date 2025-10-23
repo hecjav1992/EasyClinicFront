@@ -5,6 +5,7 @@ import { Modal } from 'bootstrap';
 import { Router } from '@angular/router';
 
 @Component({
+  standalone: false,
   selector: 'app-app-movil',
   templateUrl: './app-movil.component.html',
   styleUrls: ['./app-movil.component.css']

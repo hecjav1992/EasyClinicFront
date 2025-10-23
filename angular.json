@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "easyclinic.client:build:production"
+              "buildTarget": "easyclinic.client:build:production"
             },
             "development": {
-              "browserTarget": "easyclinic.client:build:development"
+              "buildTarget": "easyclinic.client:build:development"
             }
           },
           "defaultConfiguration": "development",
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "easyclinic.client:build"
+            "buildTarget": "easyclinic.client:build"
           }
         },
         "test": {
