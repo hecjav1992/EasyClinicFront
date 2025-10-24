@@ -137,13 +137,16 @@
           Ubicación de Consultas
         </div>
         <div class="card-body">
-          <!-- Aquí puedes insertar un mapa interactivo (Google Maps / Leaflet) -->
           <div class="map-wrapper">
-            <google-map [center]="center" [zoom]="zoom"></google-map>
+            <google-map width="100%" [center]="center" [zoom]="zoom">
+              <map-marker *ngFor="let marker of markers"
+                          [position]="marker.position"
+                          [title]="marker.title">
+              </map-marker>
+            </google-map>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-

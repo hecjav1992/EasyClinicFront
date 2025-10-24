@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+
+interface MarkerProperties {
+  position: { lat: number; lng: number; };
+  title: string;
+}
+
 @Component({
   standalone: false,
   selector: 'app-dashboard',
@@ -7,10 +13,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  center: google.maps.LatLngLiteral = { lat: 40.73061, lng: -73.935242 };
-  zoom = 12;
-  markers = [
-    { lat: 40.73061, lng: -73.935242 },
-    { lat: 40.74988, lng: -73.968285 }
+  center: google.maps.LatLngLiteral = { lat: 8.537981, lng: -80.782127 };
+  zoom = 8;
+  markers: MarkerProperties[] = [
+    { position: { lat: 8.757578, lng: -79.865468 }, title: 'Easy Data' }
   ];
 }
