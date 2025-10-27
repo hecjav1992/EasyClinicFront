@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   standalone:false,
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent {
+
+  constructor(private routes: Router) { }
+  exit() {
+    this.routes.navigate(["/"])
+
+  }
 
 }
