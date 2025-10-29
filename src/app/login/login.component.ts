@@ -27,14 +27,14 @@ export class LoginComponent  {
       next: res => {
         this.isProcessing = false;
         if (res.success && res.message === "admin") {
-          localStorage.setItem('user', res.usuario);
+          localStorage.setItem('user', res.nombre);
           this.router.navigate(['panel']);
         } else if (res.success && res.message === "fonoaudiologia") {
           this.router.navigate(['App']);
         }
       },
       error: (error) => {
-          this.usuario = "";
+          this.usuario2 = "";
           this.password = "";
         Swal.fire("Acceso Denegado", "Usuario o Contraseña Incorrectos", "error");
           this.isProcessing = false;
