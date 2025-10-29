@@ -11,7 +11,6 @@ import { take } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent  {
-
   usuario: string = '';
   password: string = '';
   isProcessing = false;
@@ -28,6 +27,7 @@ export class LoginComponent  {
       next: res => {
         this.isProcessing = false;
         if (res.success && res.message === "admin") {
+          localStorage.setItem('user', res.usuario);
           this.router.navigate(['panel']);
         } else if (res.success && res.message === "fonoaudiologia") {
           this.router.navigate(['App']);
@@ -36,7 +36,7 @@ export class LoginComponent  {
       error: (error) => {
           this.usuario = "";
           this.password = "";
-          Swal.fire("Error", "Usuario o contraseña incorrectos.", "error");
+        Swal.fire("Acceso Denegado", "Usuario o Contraseña Incorrectos", "error");
           this.isProcessing = false;
        
       }
