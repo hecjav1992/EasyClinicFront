@@ -34,7 +34,7 @@ export class LoginComponent  {
         }
       },
       error: (error) => {
-          this.usuario2 = "";
+          this.usuario = "";
           this.password = "";
         Swal.fire("Acceso Denegado", "Usuario o Contraseña Incorrectos", "error");
           this.isProcessing = false;
