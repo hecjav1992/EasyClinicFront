@@ -1,41 +1,51 @@
-<div class="main">
-  <div class="title-section">
-    DATOS GENERALES DEL PACIENTE
-  </div>
+<div>
+  <div class="main">
+    <div class="title-section">
+      DATOS GENERALES DEL PACIENTE
+    </div>
 
-  <div class="search-box">
-    <input type="text" placeholder="Buscar por cédula o expediente..."
-  [(ngModel)]="filtroUsuario"
-  (keyup)="filtrarUsuarios()"
-  class="form-control">
+    <div class="input-group mb-3" style="max-width: 400px;">
+      <span class="input-group-text bg-light">
+        <i class="bi bi-search"></i>
+      </span>
+      <input type="text"
+             class="form-control"
+             placeholder="Buscar por cédula o expediente..."
+             [(ngModel)]="filtroUsuario"
+             (input)="filtrarUsuarios()" />
+      <button *ngIf="filtroUsuario"
+              class="btn btn-outline-secondary"
+              type="button"
+              (click)="filtroUsuario=''; filtrarUsuarios()">
+        <i class="bi bi-x-circle"></i>
+      </button>
+    </div>
+    <table id="UsuarioTable">
+      <thead>
+        <tr>
+          <th>Opciones</th>
+          <th>Expediente</th>
+          <th>Cédula</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of usuariosFiltrados; let i = index">
+          <td>
+            <div class="actions">
+              <button class="btn-action btn-view" title="Ver"><i class="bi bi-eye"></i></button>
+              <button class="btn-action btn-edit" title="Editar"><i class="bi bi-pencil-square"></i></button>
+              <button class="btn-action btn-delete" title="Eliminar"><i class="bi bi-trash"></i></button>
+            </div>
+          </td>
+          <td>{{ u.id }}</td>
+          <td>{{ u.cedula }}</td>
+          <td>{{ u.nombre }}</td>
+          <td>{{ u.apellido }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <table id="UsuarioTable">
-    <thead>
-      <tr>
-        <th>Opciones</th>
-        <th>Expediente</th>
-        <th>Cédula</th>
-        <th>Nombres</th>
-        <th>Apellidos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let u of usuariosFiltrados; let i = index">
-        <td>
-          <div class="actions">
-            <button class="btn-action btn-view" title="Ver"><i class="bi bi-eye"></i></button>
-            <button class="btn-action btn-edit" title="Editar"><i class="bi bi-pencil-square"></i></button>
-            <button class="btn-action btn-delete" title="Eliminar"><i class="bi bi-trash"></i></button>
-          </div>
-        </td>
-        <td>{{ u.id }}</td>
-        <td>{{ u.cedula }}</td>
-        <td>{{ u.nombre }}</td>
-        <td>{{ u.apellido }}</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
-
 

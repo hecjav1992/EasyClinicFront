@@ -1,4 +1,4 @@
-<div class="container-fluid p-0">
+﻿<div class="container-fluid p-0">
   <!-- Header -->
   <nav class="navbar navbar-dark bg-primary sticky-top shadow-sm">
     <div class="container-fluid d-flex justify-content-between align-items-center">
@@ -33,6 +33,14 @@
               <i class="bi bi-heart-pulse fs-5 me-2"></i>
               <span class="d-none d-sm-inline">Consultas</span>
             </a>
+            <ul id="submenu-consultas" class="list-unstyled collapse mt-1 ps-4">
+              <li>
+                <a routerLink="/panel/consultas/opcion1" class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Opción 1</a>
+              </li>
+              <li>
+                <a routerLink="/panel/consultas/opcion2" class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Opción 2</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item mb-2">
             <a routerLink="/panel/fonoaudiologia" class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
@@ -41,8 +49,8 @@
             </a>
           </li>
           <li class="nav-item mb-2">
-            <a routerLink="/panel/Psicología" class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
-              <i class="bi bi-brain fs-5 me-2"></i>
+            <a routerLink="/panel/psicologia" class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
+              <i class="bi bi-emoji-smile-fill me-2"></i>
               <span class="d-none d-sm-inline">Psicología</span>
             </a>
           </li>
@@ -58,47 +66,25 @@
     <!-- Main Content -->
     <div class="col-md-9 col-xl-10 bg-light min-vh-100 p-4">
       <router-outlet></router-outlet>
+    </div>
   </div>
-</div>
 
-<!-- Logout Modal -->
-<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title" id="logoutModalLabel">Cerrar Sesión</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">¿Estás seguro que deseas cerrar sesión?</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="exit()" data-bs-dismiss="modal">Cancelar</button>
-        <a class="btn btn-primary" routerLink="/">Cerrar Sesión</a>
+  <!-- Logout Modal -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="logoutModalLabel">Cerrar Sesión</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">¿Estás seguro que deseas cerrar sesión?</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="exit()" data-bs-dismiss="modal">Cancelar</button>
+          <a class="btn btn-primary" routerLink="/">Cerrar Sesión</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <!-- CSS adicional -->
-<style>
-  .hover-bg-light:hover {
-    background-color: rgba(255,255,255,0.1);
-    transition: 0.3s;
-  }
-
-  /* Sidebar collapse para móviles */
-  @media (max-width: 768px) {
-    #sidebar {
-      position: fixed;
-      top: 56px;
-      left: 0;
-      height: 100%;
-      z-index: 1030;
-      overflow-y: auto;
-      transition: transform 0.3s ease-in-out;
-    }
-
-      #sidebar.collapse:not(.show) {
-        transform: translateX(-100%);
-      }
-  }
-</style>

@@ -7,6 +7,7 @@ import { PanelAppComponent } from './app/panel-app/panel-app.component';
 import { ConsultasComponent } from './app/consultas/consultas.component';
 import { FonoaudiologiaConsultaComponent } from './app/fonoaudiologia-consulta/fonoaudiologia-consulta.component';
 import { PacientesComponent } from './app/pacientes/pacientes.component';
+import { PsicologiaComponent } from './app/psicologia/psicologia.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
       { path: 'pacientes', component: PacientesComponent },
       { path: 'fonoaudiologia', component: FonoaudiologiaConsultaComponent },
       { path: 'consultas', component: ConsultasComponent },
+      { path: 'psicologia', component: PsicologiaComponent }
     ]
 
   },
