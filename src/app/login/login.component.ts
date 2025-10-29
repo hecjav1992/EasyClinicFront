@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../service/login.service';
 import { Router } from '@angular/router';
-import  Swal  from 'sweetalert2';
-import { Modal } from 'bootstrap';
+import Swal from 'sweetalert2';
+import { take } from 'rxjs';
 
 @Component({
   standalone: false,
@@ -11,39 +10,37 @@ import { Modal } from 'bootstrap';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent  {
 
   usuario: string = '';
   password: string = '';
-  constructor(private logingService: LoginService,
-    private router: Router) { }
+  isProcessing = false;
 
-  ejecutarTarea(): Modal | null {
-    const modalElement = document.getElementById('loadingModal');
-    if (!modalElement) return null;
-    const modal = Modal.getOrCreateInstance(modalElement);
-    modal.show();
-    return modal;
-  }
+  constructor(
+    private logingService: LoginService,
+    private router: Router
+  ) { }
 
   login() {
-    const modal = this.ejecutarTarea();
+    if (this.isProcessing) return;
+    this.isProcessing = true;
     this.logingService.login(this.usuario, this.password).subscribe({
-      next: (res) => {
-        modal?.hide();
-        if (res.success && res.message == "admin") {
+      next: res => {
+        this.isProcessing = false;
+        if (res.success && res.message === "admin") {
           this.router.navigate(['panel']);
-        }
-        else if (res.success && res.message == "fonoaudiologia") {
-          //localStorage.setItem('user', res.message);
+        } else if (res.success && res.message === "fonoaudiologia") {
           this.router.navigate(['App']);
         }
-        else {
-          console.error('Error de login');
-        }
+      },
+      error: (error) => {
+          this.usuario = "";
+          this.password = "";
+          Swal.fire("Error", "Usuario o contraseña incorrectos.", "error");
+          this.isProcessing = false;
+       
       }
     });
-
   }
-
 }
+
