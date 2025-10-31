@@ -3,9 +3,17 @@
   <nav class="navbar navbar-dark bg-primary sticky-top shadow-sm">
     <div class="container-fluid d-flex justify-content-between align-items-center">
       <span class="navbar-brand h1 fs-4 mb-0">CENTRO MÉDICO EASY DATA</span>
+      <span class="me-3 text-white">
+        <i class="bi bi-person-fill"></i> Bienvenido, {{ user }}
+      </span>
       <!-- Toggle sidebar en móviles -->
-      <span class="me-3 text-white"><i class="bi bi-person-fill"></i> Bienvenido, {{ user }}</span>
-      <button class="btn btn-outline-light d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle sidebar">
+      <button class="btn btn-outline-light d-md-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#sidebar"
+              aria-controls="sidebar"
+              aria-expanded="false"
+              aria-label="Toggle sidebar">
         <i class="bi bi-list fs-3"></i>
       </button>
     </div>
@@ -14,49 +22,72 @@
   <div class="row g-0">
     <!-- Sidebar -->
     <div id="sidebar" class="col-md-3 col-xl-2 bg-dark d-md-block collapse text-white">
-      <div class="d-flex flex-column align-items-center align-items-sm-start min-vh-100 p-3 pt-2">
-        <a routerLink="/panel/dashboard" class="d-flex align-items-center text-decoration-none mb-3 text-white">
+      <div class="d-flex flex-column align-items-start min-vh-100 p-3 pt-2">
+        <a routerLink="/panel/dashboard"
+           class="d-flex align-items-center text-decoration-none mb-3 text-white">
           <i class="bi bi-speedometer2 fs-4 me-2"></i>
           <span class="fs-5 d-none d-sm-inline">Dashboard</span>
         </a>
 
-        <hr class="text-secondary w-100">
+        <hr class="text-secondary w-100" />
 
         <ul class="nav nav-pills flex-column w-100 mb-auto">
           <li class="nav-item mb-2">
-            <a routerLink="/panel/pacientes" class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
+            <a routerLink="/panel/pacientes"
+               class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
               <i class="bi bi-person-lines-fill fs-5 me-2"></i>
               <span class="d-none d-sm-inline">Pacientes</span>
             </a>
           </li>
+
+          <!-- 🔽 Submenú Consultas funcional -->
           <li class="nav-item mb-2">
-            <a routerLink="/panel/consultas" class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
-              <i class="bi bi-heart-pulse fs-5 me-2"></i>
-              <span class="d-none d-sm-inline">Consultas</span>
-            </a>
-            <ul id="submenu-consultas" class="list-unstyled collapse mt-1 ps-4">
-              <li>
-                <a routerLink="/panel/consultas/opcion1" class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Opción 1</a>
-              </li>
-              <li>
-                <a routerLink="/panel/consultas/opcion2" class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Opción 2</a>
-              </li>
-            </ul>
+            <a class="nav-link d-flex align-items-center justify-content-between rounded px-3 py-2 text-white"
+               data-bs-toggle="collapse"
+               href="#submenu-consultas"
+               role="button"
+               aria-expanded="false"
+               aria-controls="submenu-consultas">
+              <span class="d-flex align-items-center">
+                <i class="bi bi-heart-pulse fs-5 me-2"></i>
+                <span class="d-none d-sm-inline">Consultas</span>
+              </span>
+              <i class="bi bi-chevron-down small"></i>
+              </a>
+
+              <ul id="submenu-consultas" class="list-unstyled collapse mt-1 ps-4">
+                <li>
+                  <a routerLink="/panel/CreacionPaciente"
+                     class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Nuevo Paciente</a>
+                </li>
+                <li>
+                  <a routerLink="/panel/Atencion"
+                     class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Nueva Atencion</a>
+                </li>
+              </ul>
           </li>
+
           <li class="nav-item mb-2">
-            <a routerLink="/panel/fonoaudiologia" class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
+            <a routerLink="/panel/fonoaudiologia"
+               class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
               <i class="bi bi-ear fs-5 me-2"></i>
               <span class="d-none d-sm-inline">Fonoaudiología</span>
             </a>
           </li>
+
           <li class="nav-item mb-2">
-            <a routerLink="/panel/psicologia" class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
+            <a routerLink="/panel/psicologia"
+               class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
               <i class="bi bi-emoji-smile-fill me-2"></i>
               <span class="d-none d-sm-inline">Psicología</span>
             </a>
           </li>
+
+          <!-- Logout -->
           <li class="nav-item w-100 mt-auto">
-            <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center mt-4" data-bs-toggle="modal" data-bs-target="#logoutModal">
+            <button class="btn btn-outline-light w-100 d-flex align-items-center justify-content-center mt-4"
+                    data-bs-toggle="modal"
+                    data-bs-target="#logoutModal">
               <i class="bi bi-box-arrow-right me-2"></i> Logout
             </button>
           </li>
@@ -71,16 +102,25 @@
   </div>
 
   <!-- Logout Modal -->
-  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal fade"
+       id="logoutModal"
+       tabindex="-1"
+       aria-labelledby="logoutModalLabel"
+       aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header bg-primary text-white">
           <h5 class="modal-title" id="logoutModalLabel">Cerrar Sesión</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button"
+                  class="btn-close btn-close-white"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"></button>
         </div>
         <div class="modal-body">¿Estás seguro que deseas cerrar sesión?</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" (click)="exit()" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-secondary" (click)="exit()" data-bs-dismiss="modal">
+            Cancelar
+          </button>
           <a class="btn btn-primary" routerLink="/">Cerrar Sesión</a>
         </div>
       </div>
@@ -88,4 +128,5 @@
   </div>
 </div>
 
-<!-- CSS adicional -->
+
+

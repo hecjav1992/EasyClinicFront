@@ -1,101 +1,25 @@
-body {
-  background-color: #f4f8f7;
-  font-family: "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
+.main {
+  background-color: #fefefe;
 }
 
-.main {
-  max-width: 1000px;
-  margin: 2rem auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.table th, .table td {
+  white-space: nowrap;
 }
 
 .title-section {
-  background-color: #00945f;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
 }
 
-.search-box {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-  .search-box input {
-    width: 80%;
-    padding: 0.6rem 1rem;
-    border: 2px solid #00945f;
-    border-radius: 6px;
+@media (max-width: 576px) {
+  .title-section {
     font-size: 1rem;
-    outline: none;
   }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-}
-
-thead {
-  background-color: #e6f5ef;
-  color: #00784a;
-}
-
-th, td {
-  padding: 0.8rem;
-  border-bottom: 1px solid #dcdcdc;
-}
-
-tr:hover {
-  background-color: #f3faf7;
-}
-
-/* Botones de acción */
-.actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.btn-action {
-  border: none;
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.2s ease;
-}
-
-  .btn-action i {
-    font-size: 1.1rem;
-    color: white;
+  .btn.btn-sm {
+    padding: 0.25rem 0.4rem;
   }
 
-.btn-view {
-  background-color: #0d6efd;
-}
-
-.btn-edit {
-  background-color: #ffc107;
-}
-
-.btn-delete {
-  background-color: #dc3545;
-}
-
-.btn-action:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
+  input.form-control {
+    font-size: 0.9rem;
+  }
 }

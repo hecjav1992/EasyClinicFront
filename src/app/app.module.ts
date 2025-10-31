@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PanelAppComponent } from './panel-app/panel-app.component';
 import { GoogleMap, MapMarker } from '@angular/google-maps';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { CreacionpacienteComponent } from '../app/creacionpaciente/creacionpaciente.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
     PanelComponent,
     AppMovilComponent,
     ConsultasComponent,
-    PanelAppComponent
+    PanelAppComponent,
+    CreacionpacienteComponent
   ],
   imports: [
     BrowserModule,

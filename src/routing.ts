@@ -8,6 +8,7 @@ import { ConsultasComponent } from './app/consultas/consultas.component';
 import { FonoaudiologiaConsultaComponent } from './app/fonoaudiologia-consulta/fonoaudiologia-consulta.component';
 import { PacientesComponent } from './app/pacientes/pacientes.component';
 import { PsicologiaComponent } from './app/psicologia/psicologia.component';
+import { CreacionpacienteComponent } from './app/creacionpaciente/creacionpaciente.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -21,8 +22,9 @@ const appRoutes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'pacientes', component: PacientesComponent },
       { path: 'fonoaudiologia', component: FonoaudiologiaConsultaComponent },
-      { path: 'consultas', component: ConsultasComponent },
-      { path: 'psicologia', component: PsicologiaComponent }
+      { path: 'Atencion', component: ConsultasComponent },
+      { path: 'psicologia', component: PsicologiaComponent },
+      { path: 'CreacionPaciente', component: CreacionpacienteComponent }
     ]
 
   },
