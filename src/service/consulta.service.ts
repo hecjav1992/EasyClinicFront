@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -10,8 +10,14 @@ export class ConsultaService {
   private apiUrl = 'https://easyclinicback.onrender.com/api/Consulta';
   constructor(private http: HttpClient) { }
 
-  consultapaciente(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  consultapaciente(minId:any): Observable<any> {
+    let params = new HttpParams();
+
+    if (minId !== undefined && minId !== null) {
+      params = params.set('minId', minId.toString());
+    }
+
+    return this.http.get<any>(this.apiUrl, { params });
   }
 
 }

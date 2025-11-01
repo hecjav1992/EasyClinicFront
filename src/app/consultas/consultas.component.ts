@@ -13,14 +13,13 @@ export class ConsultasComponent  {
 
   usuarios: any[]=[];
   constructor(private ConsultaService: ConsultaService) { }
-
   filtroUsuario = '';
   usuariosFiltrados = this.usuarios;
 
  
   
   filtrarUsuarios() {
-    this.ConsultaService.consultapaciente().subscribe({
+    this.ConsultaService.consultapaciente(this.filtroUsuario).subscribe({
       next: res => {
         this.usuariosFiltrados = res.message;
       }
