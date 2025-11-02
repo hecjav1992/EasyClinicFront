@@ -35,7 +35,6 @@
             <th>Expediente</th>
             <th>Cédula</th>
             <th>Nombres</th>
-            <th>Apellidos</th>
           </tr>
         </thead>
         <tbody>
@@ -56,7 +55,6 @@
             <td>{{ u.id_pacientes_data }}</td>
             <td>{{ u.cedula }}</td>
             <td>{{ u.nombre }}</td>
-            <td>{{ u.ocupacion_paciente }}</td>
           </tr>
         </tbody>
       </table>
@@ -66,86 +64,83 @@
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content rounded-4 border-0 shadow-lg">
+
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title fw-bold" id="exampleModalLabel">Historia Clínica del Paciente</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
 
-        <!--modal-->
-        <div class="container mt-5">
-          <div class="row">
-            <div class="col-4">
-              <div class="card shadow">
+      <div class="modal-body bg-light">
+        <div class="container-fluid py-3">
+          <div class="row g-4">
+
+            <!-- Columna izquierda -->
+            <div class="col-12 col-md-4">
+
+              <!-- Datos del Paciente -->
+              <div class="card mb-4 shadow-sm">
                 <div class="card-body">
-                  <div class="row">
-                    <div class="col-3">
-
-                      <!--ngif-->
-
-                      <img src="~/Content/imagenes/paciente.png" class="rounded-circle border-3 border-success border border-2" style="width:70px;height:70px">
-
+                  <div class="d-flex align-items-center mb-3">
+                    <img src="~/Content/imagenes/paciente.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
+                    <div class="ms-3">
+                      <p class="fw-bold mb-1">Apellido del Paciente</p>
+                      <p class="text-muted mb-0">Cédula: <span class="fw-semibold">XXXXXXX</span></p>
                     </div>
-                    <div class="col-9">
-                      <b><label>apellido</label></b>
-                      <br />
-                      <b><label class="mt-3">cedula</label></b>
-                      <br />
-                    </div>
-                    <div class="col-3"></div>
-                    <div class="col-3"><b>Edad</b></div>
-                    <div class="col-3"><b>Meses</b></div>
-                    <div class="col-3"><b>Dias</b></div>
-                    <div class="col-3"></div>
-                    <div class="col-3">edad</div>
-                    <div class="col-3">meses</div>
-                    <div class="col-3">dias</div>
+                  </div>
 
+                  <div class="row fw-semibold text-center">
+                    <div class="col">Edad</div>
+                    <div class="col">Meses</div>
+                    <div class="col">Días</div>
+                    <div class="col fw-normal text-muted">12</div>
+                    <div class="col fw-normal text-muted">5</div>
+                    <div class="col fw-normal text-muted">23</div>
                   </div>
                 </div>
               </div>
-              <div class="card mt-4 shadow">
-                <div class="card-header">
-                  <h4><b>Últimos Signos Vitales</b></h4>
+
+              <!-- Signos Vitales -->
+              <div class="card mb-4 shadow-sm">
+                <div class="card-header bg-white">
+                  <h5 class="fw-bold mb-0">Últimos Signos Vitales</h5>
                 </div>
                 <div class="card-body">
-                  <div class="accordion" id="accordionExample">
+                  <div class="accordion" id="vitalAccordion">
                     <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-controls="collapseTwo">
-                          <i class="bi bi-rulers"></i><span class="mx-3"><b>Talla</b></span>
-                          <span class="mx-4"> METROS</span>
+                      <h2 class="accordion-header" id="headingTalla">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTalla">
+                          <i class="bi bi-rulers me-2"></i> <strong>Talla</strong> <span class="text-muted ms-auto">Metros</span>
                         </button>
                       </h2>
-                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div id="collapseTalla" class="accordion-collapse collapse" data-bs-parent="#vitalAccordion">
                         <div class="accordion-body">
                           <canvas id="myChart"></canvas>
                         </div>
                       </div>
                     </div>
+
                     <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-controls="collapseTwo">
-                          <i class="bi bi-clipboard2-data-fill"></i><span class="mx-3"><b>Peso</b></span>
-                          <span class="mx-4">peso KG</span>
+                      <h2 class="accordion-header" id="headingPeso">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePeso">
+                          <i class="bi bi-clipboard2-data-fill me-2"></i> <strong>Peso</strong> <span class="text-muted ms-auto">Kg</span>
                         </button>
                       </h2>
-                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                      <div id="collapsePeso" class="accordion-collapse collapse" data-bs-parent="#vitalAccordion">
                         <div class="accordion-body">
                           <canvas id="myChart1"></canvas>
                         </div>
                       </div>
                     </div>
+
                     <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingTree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTree" aria-controls="collapseTwo">
-                          <i class="bi bi-thermometer-half"></i><span class="mx-3"><b>Temperatura</b></span>
-                          <span class="mx-4">tc C°</span>
+                      <h2 class="accordion-header" id="headingTemp">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTemp">
+                          <i class="bi bi-thermometer-half me-2"></i> <strong>Temperatura</strong> <span class="text-muted ms-auto">°C</span>
                         </button>
                       </h2>
-                      <div id="collapseTree" class="accordion-collapse collapse" aria-labelledby="headingTree" data-bs-parent="#accordionExample">
+                      <div id="collapseTemp" class="accordion-collapse collapse" data-bs-parent="#vitalAccordion">
                         <div class="accordion-body">
                           <div id="chart_div"></div>
                         </div>
@@ -153,186 +148,91 @@
                     </div>
                   </div>
                 </div>
-
               </div>
-              <div class="card mt-4 shadow">
+
+              <!-- Buscador -->
+              <div class="card shadow-sm">
                 <div class="card-body">
-                  <div class="row">
-                  
-                    <div class="input-group">
-                      <span class="input-group-text"><i class="bi bi-search"></i></span>
-                      <input type="text" id="enfermedad" name="enfermedad" class="form-control" />
-                      <button type="submit" class="btn btn-success">Buscar</button>
-
-                    </div>
-
-                    
+                  <div class="input-group">
+                    <span class="input-group-text bg-success text-white"><i class="bi bi-search"></i></span>
+                    <input type="text" id="enfermedad" name="enfermedad" class="form-control" placeholder="Buscar enfermedad...">
+                    <button type="submit" class="btn btn-success">Buscar</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-5">
-              <div class="card shadow">
-                <div class="card-header">
-                  <h4><b>Historial Médico</b></h4>
-                </div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-12">
-                      <img src="~/Content/imagenes/plus.png" class="img-responsive" style="cursor:pointer" /><b><span>Alergias</span></b>
-                    </div>
-                    <div class="col-12">
-                      <ul>
-                        <li>
-                         Alergias
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="row">
-                    <div class="col-12">
-                      <img src="~/Content/imagenes/plus.png" class="img-responsive" style="cursor:pointer" /><b><span>Antecedentes Familiares</span></b>
-                    </div>
-                    <div class="col-md-12">
-                      <ul>
-                        <li>
-                     antecedenteFamiliar
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="row">
-                    <div class="col-12">
-                      <img src="~/Content/imagenes/plus.png" class="img-responsive" style="cursor:pointer" /><b><span>Antecedentes Personales</span></b>
-                    </div>
-                    <div class="col-md-12">
-                      <ul>
-                        <li>
-                         Antecedentes_Patologicos_Personales
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <hr />
-                  <div class="row">
-                    <div class="col-12">
-                      <img src="~/Content/imagenes/plus.png" class="img-responsive" style="cursor:pointer" /><b><span>Atenciones Médica recibidas</span></b>
-                    </div>
-                    <div class="col-md-12">
-                      <ul>
-                       atencioa 1
-                        <li>
-                          <p class="text-justify text-start">
-                            hda
-                            <br />
-                            <b>
-                              <span>Fecha:</span>
-                            Fecha_de_Atencion
-                            </b>
-                          </p>
 
-                        </li>
-                      
-                        
-                      </ul>
-                    </div>
+            <!-- Columna central -->
+            <div class="col-12 col-md-5">
+              <div class="card h-100 shadow-sm">
+                <div class="card-header bg-white">
+                  <h5 class="fw-bold mb-0">Historial Médico</h5>
+                </div>
+                <div class="card-body overflow-auto" style="max-height:70vh;">
+
+                  <div class="mb-3">
+                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Alergias</h6>
+                    <ul class="ms-3"><li>Alergia registrada</li></ul>
                   </div>
-                  <hr />
-                  <div class="row">
-                    <div class="col-12">
-                      <img src="~/Content/imagenes/plus.png" class="img-responsive" style="cursor:pointer" /><b><span>Examen Físico</span></b>
-                    </div>
-                    <div class="col-md-12">
-                      <ul>
-                       enfermedad q
-                        <li>
-                          <p class="text-justify text-start">
-                           ExamenFisico
-                          </p>
-                        </li>
-                        
-                        
-                      </ul>
-                    </div>
+
+                  <div class="mb-3">
+                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Antecedentes Familiares</h6>
+                    <ul class="ms-3"><li>Hipertensión</li></ul>
                   </div>
-                  <hr />
-                  <div class="row">
-                    <div class="col-12">
-                      <img src="~/Content/imagenes/plus.png" class="img-responsive" style="cursor:pointer" /><b><span>Tratamiento</span></b>
-                    </div>
-                    <div class="col-md-12">
-                      <ul>
-                        
-                        <li>
-                          <p class="text-justify text-start">
-                           tratamiento
-                          </p>
-                        </li>
-                        
-                        
-                      </ul>
-                    </div>
+
+                  <div class="mb-3">
+                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Antecedentes Personales</h6>
+                    <ul class="ms-3"><li>Asma desde la niñez</li></ul>
+                  </div>
+
+                  <div class="mb-3">
+                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Atenciones Médicas Recibidas</h6>
+                    <ul class="ms-3">
+                      <li>
+                        <p class="mb-1 text-justify">Consulta general por fiebre persistente</p>
+                        <small class="text-muted">Fecha: 12/10/2024</small>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mb-3">
+                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Examen Físico</h6>
+                    <ul class="ms-3"><li>Temperatura corporal normal, presión estable.</li></ul>
+                  </div>
+
+                  <div>
+                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Tratamiento</h6>
+                    <ul class="ms-3"><li>Paracetamol 500mg cada 8h por 5 días</li></ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna derecha -->
+            <div class="col-12 col-md-3">
+              <div class="card shadow-sm">
+                <div class="card-body text-center">
+                  <button id="btnbuscarconsulta" type="button" class="btn btn-success w-100 mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalatencion">
+                    Nueva Consulta
+                  </button>
+                  <img src="~/Content/imagenes/reloj.png" class="img-fluid mb-3" style="max-width:100px;">
+                  <hr>
+                  <div class="d-flex justify-content-between">
+                    <span class="fw-semibold">Hora:</span>
+                    <span id="reloj" class="text-muted">12:45</span>
+                  </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <span class="fw-semibold">Día:</span>
+                    <span id="dia" class="text-muted">Martes</span>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-3">
-              <div class="card shadow">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-12">
-                      <button id="btnbuscarconsulta" type="button" class="btn btn-success col-12" data-bs-toggle="modal" data-bs-target="#exampleModalatencion">Nueva Consulta </button>
-                    </div>
-                    <div class="col-12 mb-2 mt-2">
-                     
-                        <img src="~/Content/imagenes/reloj.png" class="img-responsive" />
-                 
-                    </div>
-                    <br />
-                    <hr />
-                    <div class="col-4">
-                      <b><span>Hora:</span></b>
-                    </div>
-                    <div class="col-8">
-                      <label id="reloj"></label>
-                    </div>
-                    <div class="col-4">
-                      <b><span>Dia:</span></b>
-                    </div>
-                    <div class="col-8">
-                      <label id="dia"></label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-
-
-
-          </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </div>
-         
-        </div>
-      </div>
+          </div> <!-- row -->
+        </div> <!-- container -->
+      </div> <!-- modal-body -->
+    </div>
+  </div>
+</div>
