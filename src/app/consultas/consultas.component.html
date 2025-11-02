@@ -41,7 +41,7 @@
           <tr *ngFor="let u of usuariosFiltrados; let i = index">
             <td>
               <div class="d-flex justify-content-center flex-wrap gap-1">
-                <button class="btn btn-sm btn-outline-primary" title="Ver" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button (click)="data(u.id_pacientes_data)" class="btn btn-sm btn-outline-primary" title="Ver" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   <i class="bi bi-eye"></i>
                 </button>
                 <button class="btn btn-sm btn-outline-success" title="Editar">
@@ -85,18 +85,15 @@
                   <div class="d-flex align-items-center mb-3">
                     <img src="~/Content/imagenes/paciente.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
                     <div class="ms-3">
-                      <p class="fw-bold mb-1">Apellido del Paciente</p>
-                      <p class="text-muted mb-0">Cédula: <span class="fw-semibold">XXXXXXX</span></p>
+                      <p class="fw-bold mb-1">{{nombre}}</p>
+                      <p class="text-muted mb-0">Cédula: <span class="fw-semibold">{{cedula}}</span></p>
                     </div>
                   </div>
 
                   <div class="row fw-semibold text-center">
-                    <div class="col">Edad</div>
-                    <div class="col">Meses</div>
-                    <div class="col">Días</div>
-                    <div class="col fw-normal text-muted">12</div>
-                    <div class="col fw-normal text-muted">5</div>
-                    <div class="col fw-normal text-muted">23</div>
+                    <div class="col">Edad: {{edad}}</div>
+                    <div class="col">Meses: {{meses}}</div>
+                    <div class="col">Días: {{dias}}</div>
                   </div>
                 </div>
               </div>

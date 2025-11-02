@@ -3,6 +3,7 @@ import { ConsultaService } from '../../service/consulta.service';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Component({
   standalone: false,
   selector: 'app-consultas',
@@ -11,9 +12,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ConsultasComponent  {
 
-  usuarios: any[]=[];
+  usuarios: any[] = [];
   constructor(private ConsultaService: ConsultaService) { }
   filtroUsuario = '';
+  nombre = "";
+  cedula = "";
+  edad:any;
+  meses:any;
+  dias:any;
+  hoy: any;
   usuariosFiltrados = this.usuarios;
 
  
@@ -30,8 +37,40 @@ export class ConsultasComponent  {
         u.id.toLowerCase().includes(filtro) ||
         u.nombre.toLowerCase().includes(filtro)
     );
-   
+    
 
+  }
+  data(id: any) {
+   // console.log(this.hoy);
+    this.ConsultaService.buscardata(id).subscribe({
+      next: res => {
+        this.nombre = res.message[0].nombre;
+        this.cedula = res.message[0].cedula;
+        this.hoy = new Date();
+        this.edad = this.hoy.getFullYear() - new Date(res.message[0].fN_paciente).getFullYear();
+        this.meses =this.hoy.getMonth() - new Date(res.message[0].fN_paciente).getMonth();
+        this.dias = this.hoy.getDate() - new Date(res.message[0].fN_paciente).getDate();
+        if (this.meses < 0 || (this.meses === 0 && this.dias < 0)) {
+          this.edad--;
+          this.meses += 12;
+        }
+
+        if (this.dias < 0) {
+          const ultimoDiaMesAnterior = new Date(this.hoy.getFullYear(), this.hoy.getMonth(), 0).getDate();
+          this.dias += ultimoDiaMesAnterior;
+          this.meses--;
+          if (this.meses < 0) {
+            this.meses += 12;
+            this.edad--;
+          }
+        }
+
+        this.edad = this.edad.toString();
+        this.meses = this.meses.toString();
+        this.dias = this.dias.toString();
+      }
+     
+    });
   }
   
 }

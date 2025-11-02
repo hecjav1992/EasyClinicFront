@@ -35,7 +35,10 @@
     <PackageJsonDevdependenciesAngularCompilerCli Condition="$(PackageJsonDevdependenciesAngularCompilerCli) == ''">^19.2.0</PackageJsonDevdependenciesAngularCompilerCli>
     <PackageJsonDevdependenciesTypesBootstrap Condition="$(PackageJsonDevdependenciesTypesBootstrap) == ''">^5.2.10</PackageJsonDevdependenciesTypesBootstrap>
     <PackageJsonDevdependenciesTypesJasmine Condition="$(PackageJsonDevdependenciesTypesJasmine) == ''">~4.3.0</PackageJsonDevdependenciesTypesJasmine>
+    <PackageJsonDevdependenciesTypesJest Condition="$(PackageJsonDevdependenciesTypesJest) == ''">^30.0.0</PackageJsonDevdependenciesTypesJest>
     <PackageJsonDevdependenciesJasmineCore Condition="$(PackageJsonDevdependenciesJasmineCore) == ''">~4.5.0</PackageJsonDevdependenciesJasmineCore>
+    <PackageJsonDevdependenciesJest Condition="$(PackageJsonDevdependenciesJest) == ''">^29.7.0</PackageJsonDevdependenciesJest>
+    <PackageJsonDevdependenciesJestResolve Condition="$(PackageJsonDevdependenciesJestResolve) == ''">^30.2.0</PackageJsonDevdependenciesJestResolve>
     <PackageJsonDevdependenciesKarma Condition="$(PackageJsonDevdependenciesKarma) == ''">~6.4.0</PackageJsonDevdependenciesKarma>
     <PackageJsonDevdependenciesKarmaChromeLauncher Condition="$(PackageJsonDevdependenciesKarmaChromeLauncher) == ''">~3.1.0</PackageJsonDevdependenciesKarmaChromeLauncher>
     <PackageJsonDevdependenciesKarmaCoverage Condition="$(PackageJsonDevdependenciesKarmaCoverage) == ''">~2.2.0</PackageJsonDevdependenciesKarmaCoverage>
