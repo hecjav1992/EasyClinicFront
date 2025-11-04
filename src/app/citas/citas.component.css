@@ -1,0 +1,126 @@
+/* Contenedor general */
+.agenda-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  overflow-x: auto;
+}
+
+/* GRID principal */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(5, 1fr);
+  grid-auto-rows: 60px;
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  background: #f6f7f7;
+}
+
+/* Encabezado */
+.header-cell {
+  background: #edf5f6;
+  border-bottom: 1px solid #dcdcdc;
+  border-right: 1px solid #dcdcdc;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Columna de las horas */
+.time-cell {
+  background: #f3f3f3;
+  border-bottom: 1px solid #e3e3e3;
+  border-right: 1px solid #e3e3e3;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #444;
+}
+
+/* Celdas del calendario */
+.grid-cell {
+  border-bottom: 1px solid #ececec;
+  border-right: 1px solid #ececec;
+  background: #fff;
+  transition: background 0.2s;
+}
+
+  .grid-cell:hover {
+    background: #f0f0f0;
+  }
+
+/* EVENTO */
+.event {
+  position: absolute;
+  width: 150px;
+  background: #d7f6d7;
+  border-left: 5px solid #1f8f43;
+  border-radius: 6px;
+  padding: 6px;
+  box-shadow: 0px 2px 6px #0004;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Contenido del evento */
+.event-content .name {
+  font-weight: 700;
+  color: #ca004a;
+  margin-bottom: 4px;
+}
+
+.event-content .time {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.event-content .desc {
+  font-size: 13px;
+  opacity: .85;
+}
+
+.reserved {
+  background: #ffb3b3 !important;
+  border-left: 4px solid #d60000 !important;
+}
+
+
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #0007;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px #0004;
+}
+
+.btn-save {
+  background: #28a745;
+  padding: 8px 16px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.btn-cancel {
+  background: #aaa;
+  padding: 8px 16px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}

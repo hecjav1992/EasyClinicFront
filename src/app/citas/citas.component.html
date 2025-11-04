@@ -1,0 +1,47 @@
+<div class="agenda-wrapper">
+  <div class="week-header">
+    {{ currentWeekLabel }}
+  </div>
+
+  <!-- GRID DEL CALENDARIO -->
+  <div class="agenda-grid">
+
+    <!-- Encabezado días -->
+    <div class="header-cell"></div>
+    <div class="header-cell" *ngFor="let d of days">{{ d }}</div>
+
+    <!-- Filas por hora -->
+    <ng-container *ngFor="let h of hours">
+      <div class="time-cell">{{ h }}</div>
+
+      <div class="grid-cell"
+           *ngFor="let d of days; let i = index"
+           [ngClass]="{ reserved: isReserved(h, i) }"
+           (click)="openModal(h, i)"></div>
+    </ng-container>
+
+  </div>
+
+  <!-- EVENTO SOBRE LA CUADRÍCULA -->
+  <div class="event" [style.top.px]="eventTop" [style.left.px]="eventLeft" [style.height.px]="eventHeight">
+    <div class="event-content">
+      <div class="name">{{ eventData?.name }}</div>
+      <div class="time">{{ eventData?.time }} — Confirmada</div>
+      <div class="desc">{{ eventData?.desc }}</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" *ngIf="showModal">
+  <div class="modal">
+    <h3>Reservar hora</h3>
+    <p>Día: {{ selectedDayIndex !== null ? days[selectedDayIndex] : '-' }}</p>
+    <p>Hora: {{ selectedHour || '-' }}</p>
+
+
+    <div style="margin-top:10px;">
+      <button (click)="saveReservation()" class="btn-save">Guardar</button>
+      <button (click)="cancelModal()" class="btn-cancel">Cancelar</button>
+    </div>
+  </div>
+</div>

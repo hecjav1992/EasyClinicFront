@@ -17,6 +17,7 @@ export class ConsultasComponent  {
   filtroUsuario = '';
   nombre = "";
   cedula = "";
+  genero = "";
   edad:any;
   meses:any;
   dias:any;
@@ -46,6 +47,7 @@ export class ConsultasComponent  {
       next: res => {
         this.nombre = res.message[0].nombre;
         this.cedula = res.message[0].cedula;
+        this.genero = res.message[0].genero_paciente;
         this.hoy = new Date();
         this.edad = this.hoy.getFullYear() - new Date(res.message[0].fN_paciente).getFullYear();
         this.meses =this.hoy.getMonth() - new Date(res.message[0].fN_paciente).getMonth();

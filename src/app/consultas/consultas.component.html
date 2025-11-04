@@ -82,8 +82,13 @@
               <!-- Datos del Paciente -->
               <div class="card mb-4 shadow-sm">
                 <div class="card-body">
-                  <div class="d-flex align-items-center mb-3">
-                    <img src="~/Content/imagenes/paciente.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
+                  <div  class="d-flex align-items-center mb-3">
+                      <div *ngIf="genero==='Femenino';else masculino">
+                           <img src="../../assets/female.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
+                      </div>
+                      <ng-template #masculino>
+                           <img src="../../assets/paciente.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
+                      </ng-template>
                     <div class="ms-3">
                       <p class="fw-bold mb-1">{{nombre}}</p>
                       <p class="text-muted mb-0">Cédula: <span class="fw-semibold">{{cedula}}</span></p>
@@ -168,22 +173,22 @@
                 <div class="card-body overflow-auto" style="max-height:70vh;">
 
                   <div class="mb-3">
-                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Alergias</h6>
+                    <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Alergias</h6>
                     <ul class="ms-3"><li>Alergia registrada</li></ul>
                   </div>
 
                   <div class="mb-3">
-                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Antecedentes Familiares</h6>
+                    <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Antecedentes Familiares</h6>
                     <ul class="ms-3"><li>Hipertensión</li></ul>
                   </div>
 
                   <div class="mb-3">
-                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Antecedentes Personales</h6>
+                    <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Antecedentes Personales</h6>
                     <ul class="ms-3"><li>Asma desde la niñez</li></ul>
                   </div>
 
                   <div class="mb-3">
-                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Atenciones Médicas Recibidas</h6>
+                    <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Atenciones Médicas Recibidas</h6>
                     <ul class="ms-3">
                       <li>
                         <p class="mb-1 text-justify">Consulta general por fiebre persistente</p>
@@ -193,12 +198,12 @@
                   </div>
 
                   <div class="mb-3">
-                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Examen Físico</h6>
+                    <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Examen Físico</h6>
                     <ul class="ms-3"><li>Temperatura corporal normal, presión estable.</li></ul>
                   </div>
 
                   <div>
-                    <h6 class="fw-bold"><img src="~/Content/imagenes/plus.png" class="me-2" style="width:16px;">Tratamiento</h6>
+                    <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Tratamiento</h6>
                     <ul class="ms-3"><li>Paracetamol 500mg cada 8h por 5 días</li></ul>
                   </div>
 

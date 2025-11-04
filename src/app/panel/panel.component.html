@@ -32,6 +32,23 @@
         <hr class="text-secondary w-100" />
 
         <ul class="nav nav-pills flex-column w-100 mb-auto">
+
+          <li class="nav-item mb-2">
+            <a routerLink="/panel/proovedor"
+               class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
+              <i class="bi bi-people-fill fs-5 me-2"></i>
+              <span class="d-none d-sm-inline">Proveedores</span>
+            </a>
+          </li>
+
+          <li class="nav-item mb-2">
+            <a routerLink="/panel/Inventario"
+               class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
+              <i class="bi bi-box-seam-fill fs-5 me-2"></i>
+              <span class="d-none d-sm-inline">Inventario</span>
+            </a>
+          </li>
+
           <li class="nav-item mb-2">
             <a routerLink="/panel/pacientes"
                class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
@@ -53,18 +70,22 @@
                 <span class="d-none d-sm-inline">Consultas</span>
               </span>
               <i class="bi bi-chevron-down small"></i>
-              </a>
+            </a>
 
-              <ul id="submenu-consultas" class="list-unstyled collapse mt-1 ps-4">
-                <li>
-                  <a routerLink="/panel/CreacionPaciente"
-                     class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Nuevo Paciente</a>
-                </li>
-                <li>
-                  <a routerLink="/panel/Atencion"
-                     class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Nueva Atencion</a>
-                </li>
-              </ul>
+            <ul id="submenu-consultas" class="list-unstyled collapse mt-1 ps-4">
+              <li>
+                <a routerLink="/panel/CreacionPaciente"
+                   class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Nuevo Paciente</a>
+              </li>
+              <li>
+                <a routerLink="/panel/Atencion"
+                   class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Nueva Atencion</a>
+              </li>
+              <li>
+                <a routerLink="/panel/Agendas"
+                   class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Agendar Citar</a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item mb-2">
