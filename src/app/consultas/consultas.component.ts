@@ -18,14 +18,13 @@ export class ConsultasComponent  {
   nombre = "";
   cedula = "";
   genero = "";
+  valor: any;;
   edad:any;
   meses:any;
   dias:any;
   hoy: any;
   usuariosFiltrados = this.usuarios;
 
- 
-  
   filtrarUsuarios() {
     this.ConsultaService.consultapaciente(this.filtroUsuario).subscribe({
       next: res => {
@@ -38,11 +37,8 @@ export class ConsultasComponent  {
         u.id.toLowerCase().includes(filtro) ||
         u.nombre.toLowerCase().includes(filtro)
     );
-    
-
   }
   data(id: any) {
-   // console.log(this.hoy);
     this.ConsultaService.buscardata(id).subscribe({
       next: res => {
         this.nombre = res.message[0].nombre;
@@ -73,6 +69,15 @@ export class ConsultasComponent  {
       }
      
     });
+    this.ConsultaService.historialpaciente(id).subscribe({
+      next: data => {
+        this.valor = data.message;
+        console.log(data);
+      }
+
+    });
+
+
   }
   
 }

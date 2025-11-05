@@ -47,9 +47,8 @@ export class CitasComponent {
   }
 
   // ✅ Abre el Modal
-  openModal(hour: string, dayIndex: number) {
-    this.selectedHour = hour;
-    this.selectedDayIndex = dayIndex;
+  openModal() {
+   
     this.showModal = true;
   }
 

@@ -17,7 +17,7 @@
       <div class="grid-cell"
            *ngFor="let d of days; let i = index"
            [ngClass]="{ reserved: isReserved(h, i) }"
-           (click)="openModal(h, i)"></div>
+           (click)="openModal()"></div>
     </ng-container>
 
   </div>

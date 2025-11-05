@@ -174,7 +174,9 @@
 
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Alergias</h6>
-                    <ul class="ms-3"><li>Alergia registrada</li></ul>
+                    <ul *ngFor="let u of valor; let i = index" class="ms-3">
+                    <li>{{u.hra}}</li>
+                    </ul>
                   </div>
 
                   <div class="mb-3">

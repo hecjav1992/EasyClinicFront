@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class ConsultaService {
 
   private apiUrl = 'https://easyclinicback.onrender.com/api/Consulta';
+  private apiUrlhistorial = 'https://easyclinicback.onrender.com/api/Consulta/historialpaciente';
   constructor(private http: HttpClient) { }
 
   consultapaciente(minId: any): Observable<any> {
@@ -23,6 +24,13 @@ export class ConsultaService {
     let params = new HttpParams().set('minId', minId);
     return this.http.get<any>(this.apiUrl, { params });
   }
+
+  historialpaciente(minId: any): Observable<any> {
+    let params = new HttpParams().set('minId', minId);
+    return this.http.get<any>(this.apiUrlhistorial, { params });
+  }
+
+
 
 
 }
