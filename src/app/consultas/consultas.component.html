@@ -174,8 +174,8 @@
 
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Alergias</h6>
-                    <ul *ngFor="let u of valor; let i = index" class="ms-3">
-                    <li>{{u.hra}}</li>
+                    <ul class="ms-3">
+                    <li>Paracetamol</li>
                     </ul>
                   </div>
 
@@ -191,9 +191,9 @@
 
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Atenciones Médicas Recibidas</h6>
-                    <ul class="ms-3">
-                      <li>
-                        <p class="mb-1 text-justify">Consulta general por fiebre persistente</p>
+                    <ul *ngFor="let u of valor; let i = index" class="ms-3">
+                      <li *ngIf="u.hra?.trim()">
+                        <p class="mb-1 text-justify">{{u.hra}}</p>
                         <small class="text-muted">Fecha: 12/10/2024</small>
                       </li>
                     </ul>
