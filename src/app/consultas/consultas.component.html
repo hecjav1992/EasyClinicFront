@@ -4,7 +4,6 @@
       DATOS GENERALES DEL PACIENTE
     </div>
 
-    <!-- Buscador -->
     <div class="row justify-content-center mb-4">
       <div class="col-12 col-md-8 col-lg-6">
         <div class="input-group shadow-sm">
@@ -26,7 +25,7 @@
       </div>
     </div>
 
-    <!-- Tabla -->
+
     <div class="table-responsive rounded-3 shadow-sm">
       <table class="table-hover mb-0 table align-middle" id="UsuarioTable">
         <thead class="table-primary">
@@ -62,7 +61,7 @@
   </div>
 </div>
 
-<!-- Modal -->
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content rounded-4 border-0 shadow-lg">
@@ -76,19 +75,19 @@
         <div class="container-fluid py-3">
           <div class="row g-4">
 
-            <!-- Columna izquierda -->
+
             <div class="col-12 col-md-4">
 
-              <!-- Datos del Paciente -->
+
               <div class="card mb-4 shadow-sm">
                 <div class="card-body">
-                  <div  class="d-flex align-items-center mb-3">
-                      <div *ngIf="genero==='Femenino';else masculino">
-                           <img src="../../assets/female.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
-                      </div>
-                      <ng-template #masculino>
-                           <img src="../../assets/paciente.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
-                      </ng-template>
+                  <div class="d-flex align-items-center mb-3">
+                    <div *ngIf="genero==='Femenino';else masculino">
+                      <img src="../../assets/female.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
+                    </div>
+                    <ng-template #masculino>
+                      <img src="../../assets/paciente.png" alt="Paciente" class="rounded-circle border-3 border-success border" style="width:70px;height:70px;">
+                    </ng-template>
                     <div class="ms-3">
                       <p class="fw-bold mb-1">{{nombre}}</p>
                       <p class="text-muted mb-0">Cédula: <span class="fw-semibold">{{cedula}}</span></p>
@@ -103,7 +102,7 @@
                 </div>
               </div>
 
-              <!-- Signos Vitales -->
+
               <div class="card mb-4 shadow-sm">
                 <div class="card-header bg-white">
                   <h5 class="fw-bold mb-0">Últimos Signos Vitales</h5>
@@ -152,7 +151,6 @@
                 </div>
               </div>
 
-              <!-- Buscador -->
               <div class="card shadow-sm">
                 <div class="card-body">
                   <div class="input-group">
@@ -164,7 +162,7 @@
               </div>
             </div>
 
-            <!-- Columna central -->
+
             <div class="col-12 col-md-5">
               <div class="card h-100 shadow-sm">
                 <div class="card-header bg-white">
@@ -175,7 +173,7 @@
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Alergias</h6>
                     <ul class="ms-3">
-                    <li>Paracetamol</li>
+                      <li>Paracetamol</li>
                     </ul>
                   </div>
 
@@ -213,7 +211,6 @@
               </div>
             </div>
 
-            <!-- Columna derecha -->
             <div class="col-12 col-md-3">
               <div class="card shadow-sm">
                 <div class="card-body text-center">
@@ -233,10 +230,9 @@
                 </div>
               </div>
             </div>
-
-          </div> <!-- row -->
-        </div> <!-- container -->
-      </div> <!-- modal-body -->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

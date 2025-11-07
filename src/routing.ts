@@ -12,6 +12,7 @@ import { CreacionpacienteComponent } from './app/creacionpaciente/creacionpacien
 import { ProveedoresComponent } from './app/proveedores/proveedores.component';
 import { InventarioComponent } from './app/inventario/inventario.component';
 import { CitasComponent } from './app/citas/citas.component';
+import { AnaliticaBIComponent } from './app/analitica-bi/analitica-bi.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
       { path: 'Inventario', component: InventarioComponent },
       { path: 'proovedor', component: ProveedoresComponent },
       { path: 'Agendas', component: CitasComponent },
+      { path: 'AnaliticaBI', component: AnaliticaBIComponent },
     ]
 
   },
