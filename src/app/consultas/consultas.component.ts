@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConsultaService } from '../../service/consulta.service';
 import { HttpClient } from '@angular/common/http';
 
-
+declare var google: any;
 
 @Component({
   standalone: false,
@@ -79,5 +79,48 @@ export class ConsultasComponent  {
 
 
   }
-  
+
+  drawChart(datos: any) {
+
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', 'Fecha');
+    data.addColumn('number', 'Talla');
+    const rows: any[] = [];
+
+    datos.forEach((x: any) => {
+      rows.push([x.Fecha_atencion.tostring(), x.talla_atencion]);
+    });
+
+    data.addRows(rows);
+
+    const options = {
+      title: 'Historial de talla del Paciente',
+      curveType: 'function',
+      legend: { position: 'bottom' },
+      width: '100%',
+      height: 400,
+      hAxis: {
+        title: 'Fecha'
+      },
+      vAxis: {
+        title: 'Talla',
+        viewWindow: { min: 0 }
+      },
+      colors: ['#4ACF27']
+    };
+
+    const chart = new google.visualization.LineChart(
+      document.getElementById('myChart')
+    );
+
+    chart.draw(data, options);
+  }
+
+
+
+
+
 }
+
+
+
