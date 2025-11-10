@@ -22,6 +22,7 @@
     <PackageJsonDependenciesAngularPlatformBrowserDynamic Condition="$(PackageJsonDependenciesAngularPlatformBrowserDynamic) == ''">^19.2.0</PackageJsonDependenciesAngularPlatformBrowserDynamic>
     <PackageJsonDependenciesAngularRouter Condition="$(PackageJsonDependenciesAngularRouter) == ''">^19.2.0</PackageJsonDependenciesAngularRouter>
     <PackageJsonDependenciesSweetalert2NgxSweetalert2 Condition="$(PackageJsonDependenciesSweetalert2NgxSweetalert2) == ''">^14.0.0</PackageJsonDependenciesSweetalert2NgxSweetalert2>
+    <PackageJsonDependenciesAngularGoogleCharts Condition="$(PackageJsonDependenciesAngularGoogleCharts) == ''">^16.1.0</PackageJsonDependenciesAngularGoogleCharts>
     <PackageJsonDependenciesBootstrap Condition="$(PackageJsonDependenciesBootstrap) == ''">^5.3.8</PackageJsonDependenciesBootstrap>
     <PackageJsonDependenciesInstall Condition="$(PackageJsonDependenciesInstall) == ''">^0.13.0</PackageJsonDependenciesInstall>
     <PackageJsonDependenciesJestEditorSupport Condition="$(PackageJsonDependenciesJestEditorSupport) == ''">*</PackageJsonDependenciesJestEditorSupport>

@@ -40,15 +40,9 @@
           <tr *ngFor="let u of usuariosFiltrados; let i = index">
             <td>
               <div class="d-flex justify-content-center flex-wrap gap-1">
-                <button (click)="data(u.id_pacientes_data)" class="btn btn-sm btn-outline-primary" title="Ver" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  <i class="bi bi-eye"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-success" title="Editar">
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                  <i class="bi bi-trash"></i>
-                </button>
+                <button (click)="data(u.id_pacientes_data)" class="action-btn" title="Ver" title="Ver" data-bs-toggle="modal" data-bs-target="#exampleModal">🔍</button>
+                <button class="action-btn" title="Editar">✏️</button>
+                <button class="action-btn" title="Eliminar">🗑️</button>
               </div>
             </td>
             <td>{{ u.id_pacientes_data }}</td>
@@ -108,16 +102,21 @@
                   <h5 class="fw-bold mb-0">Últimos Signos Vitales</h5>
                 </div>
                 <div class="card-body">
-                  <div class="accordion" id="vitalAccordion">
+                  <div class="accordion" id="vitalAccordion2">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTalla">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTalla">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetalla">
                           <i class="bi bi-rulers me-2"></i> <strong>Talla</strong> <span class="text-muted ms-auto">Metros</span>
                         </button>
                       </h2>
-                      <div id="collapseTalla" class="accordion-collapse collapse" data-bs-parent="#vitalAccordion">
-                        <div class="accordion-body">
-                          <canvas id="myChart"></canvas>
+                      <div id="collapsetalla" class="accordion-collapse collapse" data-bs-parent="#vitalAccordion2">
+                        <div class="accordion-body" style="overflow: hidden;">
+                          <google-chart class="chart-container"
+                                        [type]="type1"
+                                        [data]="data2"
+                                        [columns]="columnNames2"
+                                        [options]="options">
+                          </google-chart>
                         </div>
                       </div>
                     </div>
@@ -129,8 +128,13 @@
                         </button>
                       </h2>
                       <div id="collapsePeso" class="accordion-collapse collapse" data-bs-parent="#vitalAccordion">
-                        <div class="accordion-body">
-                          <canvas id="myChart1"></canvas>
+                        <div class="accordion-body" style="overflow: hidden;">
+                          <google-chart class="chart-container"
+                                        [type]="type1"
+                                        [data]="data1"
+                                        [columns]="columnNames1"
+                                        [options]="options">
+                          </google-chart>
                         </div>
                       </div>
                     </div>
@@ -163,7 +167,7 @@
             </div>
 
 
-            <div class="col-12 col-md-5">
+            <div  class="col-12 col-md-5">
               <div class="card h-100 shadow-sm">
                 <div class="card-header bg-white">
                   <h5 class="fw-bold mb-0">Historial Médico</h5>
@@ -173,7 +177,7 @@
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Alergias</h6>
                     <ul class="ms-3">
-                      <li>Paracetamol</li>
+                      <li>{{alergia}}</li>
                     </ul>
                   </div>
 
@@ -192,7 +196,7 @@
                     <ul *ngFor="let u of valor; let i = index" class="ms-3">
                       <li *ngIf="u.hra?.trim()">
                         <p class="mb-1 text-justify">{{u.hra}}</p>
-                        <small class="text-muted">Fecha: 12/10/2024</small>
+                        <small class="text-muted">Fecha: {{ u.fecha_atencion | date:'dd-MM-yyyy' }}</small>
                       </li>
                     </ul>
                   </div>

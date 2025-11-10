@@ -1,1 +1,139 @@
-<p>inventario works!</p>
+<div class="panel" role="main">
+  <div class="topbar">
+    <button class="btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg> AGREGAR PRODUCTO/SERVICIO</button>
+    <button class="btn secondary"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 12h3l3-8 4 16 3-8h4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg> ACTUALIZAR</button>
+    <button class="btn warn small">ELIMINAR</button>
+    <button class="btn ghost small">CARGA MASIVA</button>
+    <button class="btn small" style="background:#00b5ad">EXPORTAR PRODUCTOS/SERVICIOS</button>
+
+    <div class="top-right">
+      <div style="display:flex; gap:8px; align-items:center;">
+        <label class="muted">Mostrando</label>
+        <select class="select" aria-label="Registros por página">
+          <option>10</option>
+          <option>25</option>
+          <option>50</option>
+        </select>
+        <span class="muted">Registros por páginas</span>
+      </div>
+
+      <div class="search" title="Buscar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="opacity:.7"><path d="M21 21l-4.35-4.35" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /><circle cx="11" cy="11" r="6" stroke="#444" stroke-width="2" /></svg>
+        <input type="search" placeholder="Buscar..." />
+      </div>
+    </div>
+  </div>
+
+  <div class="table-wrap" role="region" aria-label="Lista de productos y servicios">
+    <table>
+      <thead>
+        <tr>
+          <th class="col-check"><input type="checkbox" aria-label="Seleccionar todo"></th>
+          <th>Tipo</th>
+          <th>Código</th>
+          <th>Descripción</th>
+          <th>Unidad de Medida</th>
+          <th class="text-right">Precio unitario</th>
+          <th>ITBMS</th>
+          <th>ISC</th>
+          <th class="col-actions">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="col-check"><input type="checkbox" /></td>
+          <td><span class="chip">Producto</span></td>
+          <td>00003</td>
+          <td>MOUSE INALAMBRICO WL-24</td>
+          <td>Unidad</td>
+          <td class="text-right">8.50</td>
+          <td>7%</td>
+          <td>Exento</td>
+          <td class="col-actions">
+            <div class="actions">
+              <button class="action-btn" title="Ver">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" /><circle cx="12" cy="12" r="2.5" stroke="#333" stroke-width="1.2" /></svg>
+              </button>
+              <button class="action-btn" title="Editar">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 21v-3l11-11 3 3L6 21H3z" stroke="#333" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </button>
+              <button class="action-btn" title="Eliminar">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M8 6v12a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6M10 6V4a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2" stroke="#c0392b" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-check"><input type="checkbox" /></td>
+          <td><span class="chip">Producto</span></td>
+          <td>00007</td>
+          <td>AUDIFONO CAT EAR P38M</td>
+          <td>Unidad</td>
+          <td class="text-right">16.00</td>
+          <td>7%</td>
+          <td>Exento</td>
+          <td class="col-actions">
+            <div class="actions">
+              <button class="action-btn" title="Ver">🔍</button>
+              <button class="action-btn" title="Editar">✏️</button>
+              <button class="action-btn" title="Eliminar">🗑️</button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="col-check"><input type="checkbox" /></td>
+          <td><span class="chip">Servicio</span></td>
+          <td>A001</td>
+          <td>DIAGNOSTICO DE EQUIPO</td>
+          <td>Hora</td>
+          <td class="text-right">5.00</td>
+          <td>0%</td>
+          <td>Exento</td>
+          <td class="col-actions">
+            <div class="actions">
+              <button class="action-btn" title="Ver">🔍</button>
+              <button class="action-btn" title="Editar">✏️</button>
+              <button class="action-btn" title="Eliminar">🗑️</button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- más filas de ejemplo -->
+        <tr>
+          <td class="col-check"><input type="checkbox" /></td>
+          <td><span class="chip">Producto</span></td>
+          <td>00030</td>
+          <td>CARGADOR PORTATIL P50</td>
+          <td>Unidad</td>
+          <td class="text-right">15.60</td>
+          <td>7%</td>
+          <td>Exento</td>
+          <td class="col-actions">
+            <div class="actions">
+              <button class="action-btn" title="Ver">🔍</button>
+              <button class="action-btn" title="Editar">✏️</button>
+              <button class="action-btn" title="Eliminar">🗑️</button>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-footer" style="margin-top:14px;">
+    <div style="display:flex; gap:12px; align-items:center;">
+      <span class="muted">Mostrando</span>
+      <strong>10</strong>
+      <span class="muted">de 120 registros</span>
+    </div>
+
+    <div>
+      <button class="btn small" style="background:#fff;color:#0a84a6;border:1px solid #dfe9ec;margin-right:6px">Prev</button>
+      <button class="btn small" style="background:#0a84a6">1</button>
+      <button class="btn small" style="background:#fff;color:#0a84a6;border:1px solid #dfe9ec;margin-left:6px">Next</button>
+    </div>
+  </div>
+</div>

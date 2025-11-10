@@ -41,11 +41,29 @@
           </li>
 
           <li class="nav-item mb-2">
-            <a routerLink="/panel/Inventario"
-               class="nav-link d-flex align-items-center hover-bg-light rounded px-3 py-2 text-white">
-              <i class="bi bi-box-seam-fill fs-5 me-2"></i>
-              <span class="d-none d-sm-inline">Inventario</span>
+            <a class="nav-link d-flex align-items-center justify-content-between rounded px-3 py-2 text-white"
+               data-bs-toggle="collapse"
+               href="#submenu-consultas2"
+               role="button"
+               aria-expanded="false"
+               aria-controls="submenu-consultas">
+              <span class="d-flex align-items-center">
+                <i class="bi bi-box-seam-fill fs-5 me-2"></i>
+                <span class="d-none d-sm-inline">Inventario</span>
+              </span>
+              <i class="bi bi-chevron-down small"></i>
             </a>
+
+            <ul id="submenu-consultas2" class="list-unstyled collapse mt-1 ps-4">
+              <li>
+                <a routerLink="/panel/Inventario"
+                   class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Productos</a>
+              </li>
+              <li>
+                <a routerLink="/panel/Atencion"
+                   class="nav-link text-white-50 d-block hover-bg-light rounded py-1">Almacen</a>
+              </li>
+            </ul>
           </li>
 
           <li class="nav-item mb-2">

@@ -14,7 +14,7 @@ import { PanelAppComponent } from './panel-app/panel-app.component';
 import { GoogleMap, MapMarker } from '@angular/google-maps';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CreacionpacienteComponent } from '../app/creacionpaciente/creacionpaciente.component';
-
+import { GoogleChartsModule } from 'angular-google-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,8 @@ import { CreacionpacienteComponent } from '../app/creacionpaciente/creacionpacie
     FormsModule,
     ReactiveFormsModule,
     GoogleMapsModule,
-    GoogleMap
+    GoogleMap,
+    GoogleChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

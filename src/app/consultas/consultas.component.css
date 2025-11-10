@@ -23,3 +23,48 @@
     font-size: 0.9rem;
   }
 }
+
+.btn {
+  background: #0a84a6;
+  color: #fff;
+  border: 0;
+  padding: 9px 14px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+  .btn.secondary {
+    background: #17a2b8;
+  }
+
+  .btn.ghost {
+    background: #00a896;
+  }
+
+  .btn.warn {
+    background: #f39c12;
+  }
+
+  .btn.small {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+.action-btn {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #e3e8ea;
+  background: #fff;
+  cursor: pointer;
+}
+
+  .action-btn:hover {
+    background: #f3f6f7;
+  }
