@@ -28,6 +28,8 @@ export class ConsultasComponent  {
   type1: any = ChartType.Line;
   data1: any;
   data2: any;
+  apf = "";
+  app = "";
   usuariosFiltrados = this.usuarios;
   columnNames1 = ["Fecha Atención", "Peso", { role: "style" }, { role: "annotation" }];
   columnNames2 = ["Fecha Atención", "Talla", { role: "style" }, { role: "annotation" }];
@@ -59,6 +61,8 @@ export class ConsultasComponent  {
         this.cedula = res.message[0].cedula;
         this.genero = res.message[0].genero_paciente;
         this.alergia = res.message[0].alergias_paciente;
+        this.apf = res.message[0].apf_paciente;
+        this.app = res.message[0].app_paciente;
         this.hoy = new Date();
         this.edad = this.hoy.getFullYear() - new Date(res.message[0].fN_paciente).getFullYear();
         this.meses = this.hoy.getMonth() - new Date(res.message[0].fN_paciente).getMonth();

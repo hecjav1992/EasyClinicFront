@@ -24,8 +24,6 @@
         </div>
       </div>
     </div>
-
-
     <div class="table-responsive rounded-3 shadow-sm">
       <table class="table-hover mb-0 table align-middle" id="UsuarioTable">
         <thead class="table-primary">
@@ -40,9 +38,9 @@
           <tr *ngFor="let u of usuariosFiltrados; let i = index">
             <td>
               <div class="d-flex justify-content-center flex-wrap gap-1">
-                <button (click)="data(u.id_pacientes_data)" class="action-btn" title="Ver" title="Ver" data-bs-toggle="modal" data-bs-target="#exampleModal">🔍</button>
-                <button class="action-btn" title="Editar">✏️</button>
-                <button class="action-btn" title="Eliminar">🗑️</button>
+                <button id="ver" (click)="data(u.id_pacientes_data)" class="action-btn" title="Ver" title="Ver" data-bs-toggle="modal" data-bs-target="#exampleModal">🔍</button>
+                <button id="editar" class="action-btn" title="Editar">✏️</button>
+                <button id="eliminar" class="action-btn" title="Eliminar">🗑️</button>
               </div>
             </td>
             <td>{{ u.id_pacientes_data }}</td>
@@ -54,25 +52,17 @@
     </div>
   </div>
 </div>
-
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content rounded-4 border-0 shadow-lg">
-
       <div class="modal-header bg-primary text-white">
         <h5 class="modal-title fw-bold" id="exampleModalLabel">Historia Clínica del Paciente</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-
       <div class="modal-body bg-light">
         <div class="container-fluid py-3">
           <div class="row g-4">
-
-
             <div class="col-12 col-md-4">
-
-
               <div class="card mb-4 shadow-sm">
                 <div class="card-body">
                   <div class="d-flex align-items-center mb-3">
@@ -95,8 +85,6 @@
                   </div>
                 </div>
               </div>
-
-
               <div class="card mb-4 shadow-sm">
                 <div class="card-header bg-white">
                   <h5 class="fw-bold mb-0">Últimos Signos Vitales</h5>
@@ -120,7 +108,6 @@
                         </div>
                       </div>
                     </div>
-
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingPeso">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePeso">
@@ -138,7 +125,6 @@
                         </div>
                       </div>
                     </div>
-
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTemp">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTemp">
@@ -165,32 +151,26 @@
                 </div>
               </div>
             </div>
-
-
-            <div  class="col-12 col-md-5">
+            <div class="col-12 col-md-5">
               <div class="card h-100 shadow-sm">
                 <div class="card-header bg-white">
                   <h5 class="fw-bold mb-0">Historial Médico</h5>
                 </div>
                 <div class="card-body overflow-auto" style="max-height:70vh;">
-
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Alergias</h6>
                     <ul class="ms-3">
                       <li>{{alergia}}</li>
                     </ul>
                   </div>
-
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Antecedentes Familiares</h6>
-                    <ul class="ms-3"><li>Hipertensión</li></ul>
+                    <ul class="ms-3"><li>{{apf}}</li></ul>
                   </div>
-
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Antecedentes Personales</h6>
-                    <ul class="ms-3"><li>Asma desde la niñez</li></ul>
+                    <ul class="ms-3"><li>{{app}}</li></ul>
                   </div>
-
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Atenciones Médicas Recibidas</h6>
                     <ul *ngFor="let u of valor; let i = index" class="ms-3">
@@ -203,7 +183,7 @@
 
                   <div class="mb-3">
                     <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Examen Físico</h6>
-                    <ul class="ms-3"><li>Temperatura corporal normal, presión estable.</li></ul>
+                    <ul *ngFor="let u of valor; let i = index" class="ms-3"><li>{{u.examenfisico_paciente}}</li></ul>
                   </div>
 
                   <div>
