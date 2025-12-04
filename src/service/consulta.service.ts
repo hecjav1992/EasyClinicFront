@@ -9,6 +9,7 @@ export class ConsultaService {
 
   private apiUrl = 'https://easyclinicback.onrender.com/api/Consulta';
   private apiUrlhistorial = 'https://easyclinicback.onrender.com/api/Consulta/historialpaciente';
+  private apiUrlCrearPaciente = 'https://easyclinicback.onrender.com/api/Consulta/crearPaciente';
   constructor(private http: HttpClient) { }
 
   consultapaciente(minId: any): Observable<any> {
@@ -27,7 +28,11 @@ export class ConsultaService {
 
   historialpaciente(minId: any): Observable<any> {
     let params = new HttpParams().set('minId', minId);
-    return this.http.get<any>(this.apiUrlhistorial, { params });
+    return this.http.get<any>(this.apiUrlhistorial,{ params });
+  }
+
+  crearPaciente(paciente:any): Observable<any> {
+    return this.http.post<any>(this.apiUrlCrearPaciente,paciente)
   }
 
 
