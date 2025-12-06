@@ -32,7 +32,8 @@ export class ConsultaService {
   }
 
   crearPaciente(paciente:any): Observable<any> {
-    return this.http.post<any>(this.apiUrlCrearPaciente,paciente)
+    return this.http.post<any>(this.apiUrlCrearPaciente, paciente, {
+    withCredentials:true})
   }
 
 

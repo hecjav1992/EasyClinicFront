@@ -27,21 +27,45 @@ export class CreacionpacienteComponent {
   onSubmit() {
     if (this.patientForm.valid == true) {
       this.valor = {
-        "nombres_paciente": this.patientForm.value.nombres?.toString(),
+        "nombre": this.patientForm.value.nombres?.toString(),
         "apellido_paciente": this.patientForm.value.apellidos?.toString(),
         "genero_paciente": this.patientForm.value.sexo?.toString(),
-        "cedula_paciente": this.patientForm.value.cedula?.toString(),
+        "cedula": this.patientForm.value.cedula?.toString(),
         "FN_paciente": this.patientForm.value.fechaNacimiento,
         "telefono_paciente": this.patientForm.value.telefono?.toString(),
         "Email_paciente": this.patientForm.value.email?.toString(),
-        "edad_paciente": Number(this.patientForm.value.edad)
+        //"edad_paciente": Number(this.patientForm.value.edad)
+      
       }
+      Swal.fire({
+        title: 'Procesando...',
+        text: 'Por favor espere',
+        didOpen: () => {
+          Swal.showLoading();
+        },
+        allowOutsideClick: false,
+        allowEscapeKey: false
+      });
       this.servicio.crearPaciente(this.valor).subscribe({
         next: res => {
-          console.log(res)
-        }
+          Swal.close();
+          if (res.success == true) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Completado',
+              text: res.mensaje
+            });
+          }
+          else {
+            Swal.fire({
+              icon: 'error',
+              title: 'ups Error!',
+              text: res.mensaje
 
-      })
+            });
+          }
+        }
+      });
     }
     else {
       Swal.fire("Error de validacion", "Complete todos los campos", "error");
