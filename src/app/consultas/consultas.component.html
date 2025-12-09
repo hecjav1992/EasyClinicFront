@@ -39,7 +39,7 @@
             <td>
               <div class="d-flex justify-content-center flex-wrap gap-1">
                 <button id="ver" (click)="data(u.id_pacientes_data)" class="action-btn" title="Ver" title="Ver" data-bs-toggle="modal" data-bs-target="#exampleModal">🔍</button>
-                <button id="editar" class="action-btn" title="Editar">✏️</button>
+                <button id="editar" class="action-btn" data-bs-toggle="modal" data-bs-target="#modalatencion" title="Editar">✏️</button>
                 <button id="eliminar" class="action-btn" title="Eliminar">🗑️</button>
               </div>
             </td>
@@ -187,7 +187,7 @@
                   </div>
 
                   <div>
-                    <h6  class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Tratamiento</h6>
+                    <h6 class="fw-bold"><img src="../../assets/plus.png" class="me-2" style="width:16px;">Tratamiento</h6>
                     <ul *ngFor="let u of valor; let i = index" class="ms-3"><li>{{u.tratamiento_paciente}}</li></ul>
                   </div>
 
@@ -217,6 +217,128 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalatencion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content shadow-lg">
+
+      <!-- HEADER -->
+      <div class="modal-header bg-success text-white">
+        <h1 class="modal-title fs-4">
+          <i class="bi bi-person-fill-add"></i> Editar Datos de Pacientes
+        </h1>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="card border-0">
+          <div class="card-body">
+            <h4 class="text-danger fw-bold mb-3">Datos Generales</h4>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="pacienteDomiciliar">
+              <label class="form-check-label" for="pacienteDomiciliar">¿Paciente domiciliar?</label>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Nombres</label>
+                <input type="text" id="editarnombre" class="form-control" placeholder="Nombre del paciente" required>
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Apellidos</label>
+                <input type="text" id="editarapellido" class="form-control" placeholder="Apellido del paciente" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Sexo</label>
+                <select id="editarsexo" class="form-select" required>
+                  <option selected disabled value="">Seleccionar un género</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Cédula</label>
+                <input type="text" id="editarcedula" class="form-control" placeholder="Cédula del paciente" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Fecha de Nacimiento</label>
+                <input type="date" id="editarinputcumpleanos" class="form-control" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Edad</label>
+                <input type="text" id="editaredad" class="form-control" placeholder="Edad del paciente">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Ocupación</label>
+                <input type="text" id="editarocupacion" class="form-control" placeholder="Ocupación del paciente" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Teléfono</label>
+                <input type="text" id="editartelefono" class="form-control" placeholder="Teléfono del paciente">
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label fw-bold">Correo</label>
+                <input type="email" id="editarcorreo" class="form-control" placeholder="Correo electrónico">
+              </div>
+
+              <div class="col-md-9">
+                <label class="form-label fw-bold">Dirección</label>
+                <input type="text" id="editardireccion" class="form-control" placeholder="Escriba la dirección" required>
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <h4 class="text-danger fw-bold mb-3">Contacto de Emergencia</h4>
+
+            <div class="row g-3">
+
+              <div class="col-md-4">
+                <label class="form-label fw-bold">Contacto de emergencia</label>
+                <input type="text" id="contactoEmergenciaeditar" class="form-control" placeholder="Nombre del contacto" required>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label fw-bold">Parentesco</label>
+                <select id="editarparentesco" class="form-select" required>
+                  <option selected disabled>Seleccionar parentesco</option>
+                  <option>Madre</option>
+                  <option>Padre</option>
+                  <option>Hermanos</option>
+                  <option>Abuela</option>
+                  <option>Abuelo</option>
+                  <option>Tía</option>
+                  <option>Tío</option>
+                  <option>Amigos</option>
+                  <option>Otros</option>
+                </select>
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label fw-bold">Número de urgencia</label>
+                <input type="text" id="editarnumeroUrgencia" class="form-control" placeholder="Número de contacto" required>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+        <button id="btnActualizaInfo" type="button" class="btn btn-success px-5">
+          <i class="bi bi-download"></i> Guardar
+        </button>
+        <button type="button" class="btn btn-danger px-5" data-bs-dismiss="modal">
+          <i class="bi bi-x-circle-fill"></i> Cancelar
+        </button>
+      </div>
+
     </div>
   </div>
 </div>

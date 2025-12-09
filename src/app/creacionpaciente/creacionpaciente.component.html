@@ -1,4 +1,4 @@
-<div class="container my-5">
+﻿<div class="container my-5">
   <div class="card rounded-4 mx-auto border-0 shadow-lg" style="max-width: 900px;">
     <div class="card-body p-5">
       <h2 class="text-success fw-bold mb-4 text-center">
@@ -93,4 +93,157 @@
       </form>
     </div>
   </div>
+</div>
+
+<div class="modal fade" id="modalatencion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-person-fill-add"></i> EDITAR DATOS DE PACIENTES</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="card mt-3 shadow">
+                            <div class="card-body">
+
+                                <div class="row">
+                                    <div class="col-md-12 mb-0">
+                                        <div class="row m-0">
+                                            <div class="col-md-12">
+                                                <h3><b style="color:red">Datos Generales</b></h3>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <input class="form-check" type="checkbox" />  ¿Paciente domiciliar?
+                                            </div>
+                                            <hr />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="fullname" class="form-label"><b>Nombres</b></label>
+                                        <input type="text" class="form-control" id="editarnombre" name="editarnombre" placeholder="Nombre del paciente" required>
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="fullname" class="form-label"><b>Apellidos</b></label>
+                                        <input type="text" class="form-control" id="editarapellido" name="editarapellido" placeholder="Apellido del paciente" required>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="gender" class="form-label"><b>Sexo</b></label>
+                                        <select class="form-select" id="editarsexo" name="editarsexo" aria-label="Default select example" required>
+                                            <option selected disabled value="">Seleccionar un género</option>
+                                            <option value="Masculino">Masculino</option>
+                                            <option value="Femenino">Femenino</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="fullname" class="form-label"><b>Cédula</b></label>
+                                        <input type="text" class="form-control" id="editarcedula" name="editarcedula" placeholder="Cédula del paciente" required>
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="birthday" class="form-label"><b>Fecha de nacimiento</b></label>
+                                        <input type="date" id="editarinputcumpleanos" name="editarinputcumpleanos" class="form-control" required>
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="fullname" class="form-label"><b>Edad</b></label>
+                                        <input type="text" class="form-control" id="editaredad" name="editaredad" placeholder="Edad del paciente">
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="birthday" class="form-label"><b>Ocupación</b></label>
+                                        <input type="text" id="editarocupacion" name="editarocupacion" class="form-control" placeholder="Ocupación del paciente" required>
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="recomended" class="form-label"><b>Télefono</b></label>
+                                        <input class="form-control" id="editartelefono" name="editartelefono" placeholder="Télefono del Paciente" />
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="phone" class="form-label"><b>Email</b></label>
+                                        <input type="tel" id="editarcorreo" name="editarcorreo" class="form-control" placeholder="Correo electrónico">
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <label for="phone" class="form-label"><b>Dirección</b></label>
+                                        <input type="tel" id="editardireccion" name="editardireccion" class="form-control" placeholder="Escriba la dirección" required>
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+                                    <br />
+                                    <div class="col-md-12">
+                                        <hr />
+                                        <h3><b style="color:red">Contacto</b></h3>
+                                        <hr />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="fullname" class="form-label"><b>En caso de emergencia llamar a </b></label>
+                                        <input type="text" class="form-control" id="contactoEmergenciaeditar" name="contactoEmergenciaeditar" placeholder="Contacto de emergencia" required>
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="gender" class="form-label"><b>Parentesco con el Paciente</b></label>
+                                        <select class="form-select" id="editarparentesco" name="editarparentesco" aria-label="selecciona el parentesco" required>
+                                            <option selected disabled value="">Seleccionar el parentesco</option>
+                                            <option value="Madre">Madre</option>
+                                            <option value="Padre">Padre</option>
+                                            <option value="Hermanos">Hermanos</option>
+                                            <option value="Abuela">Abuela</option>
+                                            <option value="Abuelo">Abuelo</option>
+                                            <option value="Tia">Tia</option>
+                                            <option value="Tio">Tio</option>
+                                            <option value="Amigos">Amigos</option>
+                                            <option value="Otros">Otros</option>
+                                        </select>
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="recomended" class="form-label"><b>Número de contacto de urgencia</b></label>
+                                        <input type="tel" class="form-control" id="editarnumeroUrgencia" name="editarnumeroUrgencia" placeholder="Número de contacto de urgencia" required />
+                                        <div class="valid-feedback">Validado.</div>
+                                        <div class="invalid-feedback">Por favor llene los campos.</div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="col-md-12">
+                                    <hr />
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <a></a>  <button id="btnActualizaInfo" type="button" class="btn btn-success col-md-12" data-bs-dismiss="modal"><i class="bi bi-download"></i> <b>Guardar</b></button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-danger col-md-12" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill"></i> <b>Cancelar</b></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
