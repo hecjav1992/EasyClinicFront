@@ -13,10 +13,12 @@ import { ProveedoresComponent } from './app/proveedores/proveedores.component';
 import { InventarioComponent } from './app/inventario/inventario.component';
 import { CitasComponent } from './app/citas/citas.component';
 import { AnaliticaBIComponent } from './app/analitica-bi/analitica-bi.component';
+import { RestablecerContrasenaComponent } from './app/restablecer-contrasena/restablecer-contrasena.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'App', component: PanelAppComponent },
+  { path: 'Restablecer', component: RestablecerContrasenaComponent },
   { path: 'NuevoPaciente', component: AppMovilComponent },
   {
     path: 'panel',
