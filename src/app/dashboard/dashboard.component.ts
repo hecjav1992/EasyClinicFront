@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { GoogleMap, MapTrafficLayer } from '@angular/google-maps';
 
 interface MarkerProperties {
   position: { lat: number; lng: number; };

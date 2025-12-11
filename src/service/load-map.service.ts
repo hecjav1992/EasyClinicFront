@@ -15,6 +15,7 @@ export class LoadMapService {
   }
 
   getUbicacion(): Observable<any[]> {
+
     return this.http.get<any[]>(this.apiUbicacion);
   }
 }
