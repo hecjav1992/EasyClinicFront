@@ -19,7 +19,7 @@ export class DashboardComponent {
   markers: MarkerProperties[] = [
     { position: { lat: 8.757578, lng: -79.865468 }, title: 'Easy Data' }
   ];
- 
+
   
 
 }
