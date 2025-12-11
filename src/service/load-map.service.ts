@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class LoadMapService {
 
-  private apiUrl = 'https://easydatasoftvisitback.onrender.com/api/distancia?origins=9.0701824,-79.396864&destinations=8.756950818827647,-79.86497204025315&departure_time=now&mode=driving';
+  private apiUrl = 'https://easyclinicback.onrender.com/api/distancia?origins=9.0701824,-79.396864&destinations=8.756950818827647,-79.86497204025315&departure_time=now&mode=driving';
   private apiUbicacion = 'https://easydatasoftvisitback.onrender.com/api/Pedidos';
   constructor(private http: HttpClient) { }
   getItems2(): Observable<any[]> {
