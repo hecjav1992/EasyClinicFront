@@ -143,6 +143,9 @@
                           [position]="marker.position"
                           [title]="marker.title">
               </map-marker>
+              <map-polyline [path]="path"
+                            [options]="polylineOptions">
+              </map-polyline>
               <map-traffic-layer [autoRefresh]="true" />
             </google-map>
           </div>
