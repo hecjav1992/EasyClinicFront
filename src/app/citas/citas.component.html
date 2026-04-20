@@ -6,21 +6,18 @@
 
 <br>
 
-<!-- ✅ Vista mensual -->
 <mwl-calendar-month-view *ngIf="view === CalendarView.Month"
                          [viewDate]="viewDate"
                          [events]="events"
                          (dayClicked)="onDayClicked($event.day)">
 </mwl-calendar-month-view>
 
-<!-- ✅ Vista semanal -->
 <mwl-calendar-week-view *ngIf="view === CalendarView.Week"
                         [viewDate]="viewDate"
                         [events]="events"
                         (hourSegmentClicked)="onHourClicked($event.date)">
 </mwl-calendar-week-view>
 
-<!-- ✅ Vista diaria -->
 <mwl-calendar-day-view *ngIf="view === CalendarView.Day"
                        [viewDate]="viewDate"
                        [events]="events"

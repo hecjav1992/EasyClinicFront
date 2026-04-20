@@ -23,7 +23,7 @@ export class CitasComponent {
 
   onHourClicked(date: Date) {
     this.events = [
-      ...this.events, // ✅ spread correcto
+     ...this.events,
       {
         start: date,
         title: 'Nueva reserva'
