@@ -8,14 +8,13 @@
 
 <mwl-calendar-month-view *ngIf="view === CalendarView.Month"
                          [viewDate]="viewDate"
-                         [events]="events"
-                         (dayClicked)="onDayClicked($event.day)">
+                         [events]="events">
 </mwl-calendar-month-view>
 
-<mwl-calendar-week-view *ngIf="view === CalendarView.Week"
+<mwl-calendar-week-view *ngIf="view === CalendarView.Week"            
+                        (hourSegmentClicked)="onHourClicked($event.date)"
                         [viewDate]="viewDate"
-                        [events]="events"
-                        (hourSegmentClicked)="onHourClicked($event.date)">
+                        [events]="events">
 </mwl-calendar-week-view>
 
 <mwl-calendar-day-view *ngIf="view === CalendarView.Day"
