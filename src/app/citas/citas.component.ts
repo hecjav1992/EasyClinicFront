@@ -19,10 +19,6 @@ export class CitasComponent {
   CalendarView = CalendarView;
   events: CalendarEvent[] = [];
 
-  onDayClicked(day: any) {
-    console.log('Día clickeado:', day.date);
-    alert("click");
-  }
   async onHourClicked(date: Date) {
     this.titulo = await this.valor();
     this.events = [
