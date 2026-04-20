@@ -15,6 +15,9 @@ import { GoogleMap, MapMarker } from '@angular/google-maps';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { CreacionpacienteComponent } from '../app/creacionpaciente/creacionpaciente.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,12 @@ import { GoogleChartsModule } from 'angular-google-charts';
     ReactiveFormsModule,
     GoogleMapsModule,
     GoogleMap,
-    GoogleChartsModule
+    GoogleChartsModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,3 +5,4 @@ html, body {
   height: 100%;
   font-family: 'Numans', sans-serif2;
 }
+@import "../node_modules/angular-calendar/css/angular-calendar.css";

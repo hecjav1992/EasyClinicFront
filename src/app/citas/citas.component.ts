@@ -1,75 +1,33 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { CalendarView, CalendarEvent, CalendarModule } from 'angular-calendar';
 
 @Component({
   selector: 'app-citas',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CalendarModule],
   templateUrl: './citas.component.html',
   styleUrls: ['./citas.component.css']
 })
 export class CitasComponent {
 
-  // ✅ Semana actual
-  currentWeekLabel: string = 'Semana del 4 al 10 de Noviembre 2025';
+  view: CalendarView = CalendarView.Month;
+  viewDate: Date = new Date();
+  CalendarView = CalendarView;
+  events: CalendarEvent[] = [];
 
-  // ✅ Días columnas
-  days: string[] = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie'];
-
-  // ✅ Horas filas
-  hours: string[] = [
-    '8:00', '9:00', '10:00', '11:00',
-    '12:00', '13:00', '14:00', '15:00'
-  ];
-
-  // ✅ Info modal
-  showModal: boolean = false;
-  selectedDayIndex: number | null = null;
-  selectedHour: string | null = null;
-
-  // ✅ Lista de reservas
-  reservedSlots: { hour: string; dayIndex: number }[] = [];
-
-  // ✅ Evento ejemplo
-  eventTop: number = 120;
-  eventLeft: number = 160;
-  eventHeight: number = 80;
-  eventData: any = {
-    name: 'Leire',
-    time: '08:30–09:30',
-    desc: 'Prueba Prueba Prueba'
-  };
-
-  // ✅ Determina si un bloque está reservado
-  isReserved(hour: string, dayIndex: number): boolean {
-    return this.reservedSlots.some(r => r.hour === hour && r.dayIndex === dayIndex);
+  onDayClicked(day: any) {
+    console.log('Día clickeado:', day.date);
+    alert("click");
   }
 
-  // ✅ Abre el Modal
-  openModal() {
-   
-    this.showModal = true;
-  }
-
-  // ✅ Guarda la reserva
-  saveReservation() {
-    if (this.selectedHour && this.selectedDayIndex != null) {
-      this.reservedSlots.push({
-        hour: this.selectedHour,
-        dayIndex: this.selectedDayIndex
-      });
-    }
-    this.cancelModal();
-  }
-
-  // ✅ Cierra modal
-  cancelModal() {
-    this.showModal = false;
-    this.selectedHour = null;
-    this.selectedDayIndex = null;
+  onHourClicked(date: Date) {
+    this.events = [
+      ...this.events, // ✅ spread correcto
+      {
+        start: date,
+        title: 'Nueva reserva'
+      }
+    ];
   }
 }
-
-
-

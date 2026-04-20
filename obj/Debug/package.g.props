@@ -23,8 +23,10 @@
     <PackageJsonDependenciesAngularRouter Condition="$(PackageJsonDependenciesAngularRouter) == ''">^19.2.0</PackageJsonDependenciesAngularRouter>
     <PackageJsonDependenciesGooglemapsJsApiLoader Condition="$(PackageJsonDependenciesGooglemapsJsApiLoader) == ''">^2.0.2</PackageJsonDependenciesGooglemapsJsApiLoader>
     <PackageJsonDependenciesSweetalert2NgxSweetalert2 Condition="$(PackageJsonDependenciesSweetalert2NgxSweetalert2) == ''">^14.0.0</PackageJsonDependenciesSweetalert2NgxSweetalert2>
+    <PackageJsonDependenciesAngularCalendar Condition="$(PackageJsonDependenciesAngularCalendar) == ''">^0.31.1</PackageJsonDependenciesAngularCalendar>
     <PackageJsonDependenciesAngularGoogleCharts Condition="$(PackageJsonDependenciesAngularGoogleCharts) == ''">^16.1.0</PackageJsonDependenciesAngularGoogleCharts>
     <PackageJsonDependenciesBootstrap Condition="$(PackageJsonDependenciesBootstrap) == ''">^5.3.8</PackageJsonDependenciesBootstrap>
+    <PackageJsonDependenciesDateFns Condition="$(PackageJsonDependenciesDateFns) == ''">^2.30.0</PackageJsonDependenciesDateFns>
     <PackageJsonDependenciesInstall Condition="$(PackageJsonDependenciesInstall) == ''">^0.13.0</PackageJsonDependenciesInstall>
     <PackageJsonDependenciesJestEditorSupport Condition="$(PackageJsonDependenciesJestEditorSupport) == ''">*</PackageJsonDependenciesJestEditorSupport>
     <PackageJsonDependenciesRunScriptOs Condition="$(PackageJsonDependenciesRunScriptOs) == ''">*</PackageJsonDependenciesRunScriptOs>
