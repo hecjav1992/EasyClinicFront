@@ -50,6 +50,7 @@ export class CitasComponent {
         autocapitalize: "off",
         autocorrect: "off"
       },
+      confirmButtonText: "Confirmar",
       showCancelButton: true,
     });
     if (result.isConfirmed) {
