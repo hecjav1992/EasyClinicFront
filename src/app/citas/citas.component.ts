@@ -2,6 +2,7 @@ import { Component,OnChanges,OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarView, CalendarEvent, CalendarModule } from 'angular-calendar';
 import Swal from 'sweetalert2';
+import { CitasService } from '../../service/citas.service';
 
 @Component({
   selector: 'app-citas',
@@ -11,7 +12,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./citas.component.css']
 })
 export class CitasComponent {
-  constructor() { }
+  constructor(private citas: CitasService) { }
 
   titulo: any=null;
   view: CalendarView = CalendarView.Month;
@@ -32,10 +33,13 @@ export class CitasComponent {
         }        
       }
     ];
-    
+    console.log(this.events);
+    this.citas.reserver().subscribe({
+      next: res => {
+        console.log(res);
+      }
+    });
   }
-
-
   async valor() {
     const result = await Swal.fire({
       title: "Reserva Cita",
