@@ -8,9 +8,11 @@ import { Observable } from 'rxjs';
 export class CitasService {
   private apiUrl = 'https://easyclinicback.onrender.com/api/Agenda/agendar';
   constructor(private http: HttpClient) { }
-  reserver(): Observable<any> {
-    return this.http.post<any>(this.apiUrl, {
-
+  reserver(titulo:string): Observable<any> {
+    return this.http.post<any>(this.apiUrl, 
+      {
+        nombre:titulo
+     
     });
   }
 

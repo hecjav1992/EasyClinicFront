@@ -1,8 +1,9 @@
-import { Component,OnChanges,OnInit, SimpleChanges } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarView, CalendarEvent, CalendarModule } from 'angular-calendar';
 import Swal from 'sweetalert2';
 import { CitasService } from '../../service/citas.service';
+import { es } from 'date-fns/locale';
 
 @Component({
   selector: 'app-citas',
@@ -11,14 +12,21 @@ import { CitasService } from '../../service/citas.service';
   templateUrl: './citas.component.html',
   styleUrls: ['./citas.component.css']
 })
-export class CitasComponent {
+export class CitasComponent implements OnInit {
   constructor(private citas: CitasService) { }
-
-  titulo: any=null;
+  
+  locale: string = 'es';
+  titulo: any;
   view: CalendarView = CalendarView.Month;
   viewDate: Date = new Date();
   CalendarView = CalendarView;
   events: CalendarEvent[] = [];
+
+  ngOnInit(): void {
+
+    throw new Error('Method not implemented.');
+  }
+
 
   async onHourClicked(date: Date) {
     this.titulo = await this.valor();
@@ -28,16 +36,15 @@ export class CitasComponent {
         start: date,
         title: this.titulo,
         color: {
-          primary: "yellow",
-          secondary:"red"
+          primary: "white",
+          secondary:"green"
         }        
       }
     ];
-    console.log(this.events);
-    this.citas.reserver().subscribe({
+    this.citas.reserver(this.titulo).subscribe({
       next: res => {
         console.log(res);
-      }
+      },
     });
   }
   async valor() {

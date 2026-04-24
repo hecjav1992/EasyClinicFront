@@ -14,8 +14,6 @@ export class LoginService {
     return this.http.post<any>(this.apiUrl, {
       usuario: usuario,
       contrasena: password
-    }, {
-      withCredentials: true
     });
   }
 }
