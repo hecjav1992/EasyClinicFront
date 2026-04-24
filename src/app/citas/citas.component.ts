@@ -36,8 +36,9 @@ export class CitasComponent implements OnInit {
         start: date,
         title: this.titulo,
         color: {
-          primary: "white",
-          secondary:"green"
+          primary: "red",
+          secondary: "green",
+          secondaryText:"white"
         }        
       }
     ];
